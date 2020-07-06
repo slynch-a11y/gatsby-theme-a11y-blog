@@ -1,0 +1,25 @@
+{
+    "name": "@slynch-github/gatsby-theme-a11y-blog",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "clean": "gatsby clean"
+    },
+    "peerDependencies": {
+        "gatsby": "^2.23.20",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+        "gatsby": "^2.23.20",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "dependencies": {
+        "gatsby-source-filesystem": "^2.3.18",
+        "gatsby-transformer-remark": "^2.8.23"
+    }
+}
