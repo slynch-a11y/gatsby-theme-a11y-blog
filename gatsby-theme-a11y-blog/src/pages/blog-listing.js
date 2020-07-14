@@ -7,7 +7,7 @@ class BlogListing extends React.Component {
     
 		return (
 			<div>
-				<h1>Blog Posts</h1>
+				<h1>Blog</h1>
 				{blogListings.map((blog, index) => {
 						return (
 							<div key={index}>

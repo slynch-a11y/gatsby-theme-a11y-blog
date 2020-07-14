@@ -113,8 +113,6 @@ exports.createPages = async ({ graphql, actions }, options) => {
 	});
 
 	//query for portfolio results
-	const portfolioPath = 'portfolio';
-	const portfolioPost = require.resolve(`./src/pages/portfolio-post.js`);
 	const result = await graphql(
 		`
         query {
@@ -146,7 +144,8 @@ exports.createPages = async ({ graphql, actions }, options) => {
 	}
 
 	const portfolioPosts = result.data.allMarkdownRemark.edges;
-
+	const portfolioPath = 'portfolio';
+	
 	//create portfolio listing page
 	createPage({
 		path: portfolioPath,
@@ -156,24 +155,5 @@ exports.createPages = async ({ graphql, actions }, options) => {
 		}
 	});
 
-	portfolioPosts.forEach((post, index) => {
-		const previous = index === portfolioPosts.length - 1 ? null : portfolioPosts[index + 1].node;
-		const next = index === 0 ? null : portfolioPosts[index - 1].node;
 
-		//create portfolio pages
-		createPage({
-			path: post.node.fields.slug,
-			component: portfolioPost,
-			context: {
-				title: post.node.frontmatter.title,
-				date: post.node.frontmatter.date,
-				tags: post.node.frontmatter.tags,
-				description: post.node.frontmatter.description,
-				html: post.node.html,
-				portfolioPath,
-				previous,
-				next
-			}
-		});
-	});
 };
