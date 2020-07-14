@@ -55,7 +55,31 @@ exports.createPages = async ({ graphql, actions }, options) => {
                 tags,
                 date(formatString: "MMMM DD, YYYY"),
                 description,
-              }
+				featuredImage {
+					childImageSharp {
+					  fixed(height: 150, width: 200, cropFocus: CENTER) {
+						base64
+						aspectRatio
+						srcWebp
+						srcSetWebp
+						src
+						srcSet
+					   width
+					   height
+					  }
+					  fluid(maxWidth: 800) {
+						src
+					   srcSet
+					   srcSetWebp
+					   base64
+						aspectRatio
+				   
+					  }
+					 
+					}
+				  },
+				  featuredImageAlt
+				}
               excerpt(pruneLength: 150)
             }
         }
@@ -89,7 +113,9 @@ exports.createPages = async ({ graphql, actions }, options) => {
 				blogPath,
 				previous,
 				next,
-				excerpt: post.node.excerpt
+				excerpt: post.node.excerpt,
+				featuredImage: post.node.frontmatter.featuredImage,
+				featuredImageAlt: post.node.frontmatter.featuredImageAlt
 			}
 		});
 	});
@@ -128,8 +154,21 @@ exports.createPages = async ({ graphql, actions }, options) => {
                   title,
                   tags,
                   date(formatString: "MMMM DD, YYYY"),
-                  description
-                  
+                  description,
+                  image {
+                    childImageSharp {
+                      fixed(height: 150, width: 200, cropFocus: CENTER) {
+                        base64
+                        aspectRatio
+                        srcWebp
+                        srcSetWebp
+                        src
+                        srcSet
+                       width
+                       height
+                      }
+                    }
+                  }
                 }
                 excerpt(pruneLength: 150)
               }

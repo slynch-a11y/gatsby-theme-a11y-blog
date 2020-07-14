@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from "gatsby-image"
 
 class PortfolioListing extends React.Component {
 	render() {
@@ -11,7 +12,7 @@ class PortfolioListing extends React.Component {
 					return (
 						<div key={index}>
 							<h2>{portfolio.node.frontmatter.title}</h2>
-							<div dangerouslySetInnerHTML={{ __html: portfolio.node.html }} />
+							<Img fixed={portfolio.node.frontmatter.image.childImageSharp.fixed} alt="" />
 						</div>
 					);
 				})}

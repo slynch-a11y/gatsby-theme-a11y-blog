@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from "gatsby-image"
 
 class BlogPost extends React.Component {
 	render() {
-		const { title, html, date, previous, next } = this.props.pageContext;
+		const { title, html, date, previous, next, featuredImage, featuredImageAlt } = this.props.pageContext;
 		return (
 			<div>
 				<h1>{title}</h1>
 				<p>{date}</p>
+				<Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} />
 				<div dangerouslySetInnerHTML={{ __html: html }} />
 				<hr />
 				<ul>
