@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
 	const blogResult = await graphql(
 		`
       query {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {parent: {}, fileAbsolutePath: {regex: "/blog/"}})
+        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {parent: {}, fileAbsolutePath: {regex: "/src/markdown/blog/"}})
           {
           edges {
             node {
@@ -118,7 +118,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
 	const result = await graphql(
 		`
         query {
-          allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {parent: {}, fileAbsolutePath: {regex: "/portfolio/"}})
+          allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {parent: {}, fileAbsolutePath: {regex: "/src/markdown/portfolio/"}})
           {
             edges {
               node {

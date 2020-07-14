@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 
 class HomePage extends React.Component {
 	render() {
-        const blogListings = this.props.pageContext.blogs;
-    
+		const blogListings = this.props.pageContext.blogs;
+
 		return (
 			<div>
 				<h1>Welcome</h1>
@@ -14,13 +14,13 @@ class HomePage extends React.Component {
 						return (
 							<div key={index}>
 								<h3>
-									<Link to={blog.node.fields.slug}>
-										{blog.node.frontmatter.title}
-									</Link>
+									<Link to={blog.node.fields.slug}>{blog.node.frontmatter.title}</Link>
 								</h3>
 								<p>{blog.node.excerpt}</p>
 							</div>
 						);
+					} else {
+						return null;
 					}
 				})}
 			</div>
