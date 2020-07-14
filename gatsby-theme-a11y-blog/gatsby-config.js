@@ -29,5 +29,25 @@ module.exports = {
             },
           },
           `gatsby-transformer-sharp`,
+          {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+              fonts: [
+                {
+                  family: `Roboto`
+                },
+                {
+                  family: `Poppins`
+                },
+              ],
+            },
+          },
+          `gatsby-plugin-theme-ui`,
+          {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+              pathToConfigModule: `src/utils/typography`,
+            },
+          }
     ]
 }
