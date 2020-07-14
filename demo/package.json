@@ -9,7 +9,7 @@
         "clean": "gatsby clean"
     },
     "dependencies": {
-        "@slynch-github/gatsby-theme-a11y-blog": "*",
+        "@slynch-a11y/gatsby-theme-a11y-blog": "*",
         "gatsby": "^2.23.20",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
