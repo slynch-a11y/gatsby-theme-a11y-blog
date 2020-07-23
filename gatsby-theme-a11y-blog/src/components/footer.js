@@ -11,7 +11,7 @@ export function Footer(props) {
   const { email, twitter, linkedIn } = props.data.site.siteMetadata.social;
 
   return (
-<footer sx={{ marginTop: "200px" }}>
+    <footer sx={{ marginTop: "200px" }}>
       <div
         sx={{
           mx: "auto",
