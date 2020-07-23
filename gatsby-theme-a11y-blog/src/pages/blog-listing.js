@@ -1,28 +1,28 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { Styled } from "theme-ui";
 
-class BlogListing extends React.Component {
-	render() {
-        const blogListings = this.props.pageContext.blogs;
-    
-		return (
-			<div>
-				<h1>Blog</h1>
-				{blogListings.map((blog, index) => {
-						return (
-							<div key={index}>
-								<h2>
-									<Link to={blog.node.fields.slug}>
-										{blog.node.frontmatter.title}
-									</Link>
-								</h2>
-								<p>{blog.node.excerpt}</p>
-							</div>
-						);
-				})}
-			</div>
-		);
-	}
+export default function BlogListing(props) {
+  const blogListings = props.pageContext.blogs;
+
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      <Styled.h1>Blog</Styled.h1>
+      {blogListings.map((blog, index) => {
+        return (
+          <div key={index}>
+            <Styled.h2>
+              <Styled.a as={Link} to={blog.node.fields.slug}>
+                {blog.node.frontmatter.title}
+              </Styled.a>
+            </Styled.h2>
+            <p>{blog.node.excerpt}</p>
+          </div>
+        );
+      })}
+    </Layout>
+  );
 }
-
-export default BlogListing;

@@ -1,24 +1,55 @@
-import React from 'react';
-import Img from "gatsby-image"
+import React from "react";
+import Img from "gatsby-image";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Styled, Card, Text } from "theme-ui";
 
-class PortfolioListing extends React.Component {
-	render() {
-		const portfolioListings = this.props.pageContext.portfolio;
+export default function PortfolioListing(props) {
+  const portfolioListings = props.pageContext.portfolio;
 
-		return (
-			<div>
-				<h1>Portfolio</h1>
-				{portfolioListings.map((portfolio, index) => {
-					return (
-						<div key={index}>
-							<h2>{portfolio.node.frontmatter.title}</h2>
-							<Img fixed={portfolio.node.frontmatter.image.childImageSharp.fixed} alt="" />
-						</div>
-					);
-				})}
-			</div>
-		);
-	}
+  return (
+    <Layout>
+      <SEO title="Portfolio" />
+      <Styled.h1>Portfolio</Styled.h1>
+      <p>What I create when I'm not sleeping.</p>
+      <div sx={{ mx: "auto", maxWidth: "container" }}>
+        <ul
+          sx={{
+            listStyle: "none",
+            display: "grid",
+            gridGap: 3,
+            gridTemplateColumns: "repeat(auto-fit, minmax(256px, 1fr))",
+            m: 0,
+            px: 3,
+            py: 4,
+          }}
+        >
+          {portfolioListings.map((portfolio, index) => {
+            return (
+              <li key={index}>
+                <Card
+                  sx={{
+                    maxWidth: 216,
+                  }}
+                >
+                  <Img
+                    fixed={
+                      portfolio.node.frontmatter.image.childImageSharp.fixed
+                    }
+                    alt=""
+                  />
+                  <Styled.h2 sx={{ color: "black" }}>
+                    {portfolio.node.frontmatter.title}
+                  </Styled.h2>
+                  <Text sx={{ color: "black" }}>GitHub | Demo</Text>
+                </Card>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </Layout>
+  );
 }
-
-export default PortfolioListing;
