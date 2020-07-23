@@ -1,5 +1,4 @@
-import { StaticQuery, graphql } from 'gatsby';
-
+import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +11,6 @@ export function Footer(props) {
   const { email, twitter, linkedIn } = props.data.site.siteMetadata.social;
 
   return (
-    
 <footer sx={{ marginTop: "200px" }}>
       <div
         sx={{
