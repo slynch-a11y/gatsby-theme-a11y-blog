@@ -1,7 +1,7 @@
 ---
 title: Fourth Blog Post
 date: '2020-05-20'
-description: this is my fourth blog post
+description: 'this is my fourth blog post'
 tags: blog, fourth
 featuredImage: "./images/sophia.jpg"
 featuredImageAlt: "featured-image-alt-text"

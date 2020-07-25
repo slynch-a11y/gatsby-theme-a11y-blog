@@ -1,7 +1,7 @@
 ---
 title: First Blog Post
 date: '2020-02-29'
-description: this is my first blog post
+description: 'this is my first blog post'
 tags: blog, first
 featuredImage: "./images/leo.jpg"
 featuredImageAlt: "featured-image-alt-text"
