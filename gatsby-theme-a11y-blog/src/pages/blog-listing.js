@@ -5,18 +5,17 @@ import SEO from "../components/seo";
 import { Styled } from "theme-ui";
 
 export default function BlogListing(props) {
-  const blogListings
-  if (props.pageContext.blogs) {
-    blogListings = props.pageContext.blogs;
-  } else {
-    blogListings = null;
-  }
+
+
+   const blogListings = props.pageContext.blogs;
+  
 
   return (
     <Layout>
       <SEO title="Blog" />
       <Styled.h1>Blog</Styled.h1>
-      {blogListings.map((blog, index) => {
+      {
+      blogListings ? blogListings.map((blog, index) => {
         return (
           <div key={index}>
             <Styled.h2>
@@ -26,8 +25,8 @@ export default function BlogListing(props) {
             </Styled.h2>
             <p>{blog.node.excerpt}</p>
           </div>
-        );
-      })}
+        ); 
+      }): null}
     </Layout>
   );
 }
