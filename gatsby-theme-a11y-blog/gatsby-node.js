@@ -182,6 +182,13 @@ exports.createPages = async ({ graphql, actions }, options) => {
                       width
                       height
                     }
+                    fluid(maxWidth: 300) {
+                      src
+                      srcSet
+                      srcSetWebp
+                      base64
+                      aspectRatio
+                    }
                   }
                 }
               }

@@ -1,0 +1,8 @@
+[Build]
+  Publish = "site/public/"
+  command = "yarn workspace site build"
+  Functions = ""
+
+[Build.environment]
+  NODE_ENV = "PRODUCTION"
+

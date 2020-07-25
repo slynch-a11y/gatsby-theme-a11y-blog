@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 /** @jsx jsx */
 import { Styled, Grid, jsx, Card } from "theme-ui";
-import catWithTie from "../images/cat_with_tie.jpg";
+import twoCats from "../images/two_cats.jpg";
 
 export default function HomePage(props) {
   const blogListings = props.pageContext.blogs;
@@ -16,8 +16,9 @@ export default function HomePage(props) {
         <div>
           <Styled.h1>Welcome</Styled.h1>{" "}
           <Card variant="secondary">
-            <img src={catWithTie} alt="" />
-            <div>A cute cat wearing a tie.</div>
+            <figure><img src={twoCats} alt="" />
+            
+            <figcaption>Two cats sitting next to each other.  One is wearing a bowtie and the other is wearing a tie.</figcaption></figure>
           </Card>
         </div>
         <div>

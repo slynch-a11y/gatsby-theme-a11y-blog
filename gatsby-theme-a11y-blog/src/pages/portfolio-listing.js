@@ -31,12 +31,16 @@ export default function PortfolioListing(props) {
               <li key={index}>
                 <Card
                   sx={{
-                    maxWidth: 216,
+                    maxWidth: 260,
+                
                   }}
                 >
-                  <Img
-                    fixed={
-                      portfolio.node.frontmatter.image.childImageSharp.fixed
+                  <Img sx={{
+                    
+                    minHeight: 250
+                  }}
+                    fluid={
+                      portfolio.node.frontmatter.image.childImageSharp.fluid
                     }
                     alt=""
                   />
