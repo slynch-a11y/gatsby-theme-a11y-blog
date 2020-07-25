@@ -21,7 +21,7 @@ export default function BlogPost(props) {
       <SEO title={title} />
       <Styled.h1>{title}</Styled.h1>
       <p>{date}</p>
-      <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} />
+      {/* <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} /> */}
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <hr />
       <ul
