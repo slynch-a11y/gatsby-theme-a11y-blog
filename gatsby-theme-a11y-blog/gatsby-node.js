@@ -17,6 +17,21 @@ exports.onPreBootstrap = ({ reporter }, options) => {
   }
 };
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
 //create a slug field
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
