@@ -22,7 +22,7 @@ export default function HomePage(props) {
           </Card>
         </div>
         <div>
-          <Styled.h2>About Me</Styled.h2>
+          <Styled.h2>About Me!</Styled.h2>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
