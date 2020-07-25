@@ -1,6 +1,6 @@
 [Build]
-  Publish = "site/public/"
-  command = "yarn workspace site build"
+  Publish = "demo/public/"
+  command = "yarn workspace demo build"
   Functions = ""
 
 [Build.environment]
