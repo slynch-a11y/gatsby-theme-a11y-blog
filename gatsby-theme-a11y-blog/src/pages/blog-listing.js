@@ -5,7 +5,12 @@ import SEO from "../components/seo";
 import { Styled } from "theme-ui";
 
 export default function BlogListing(props) {
-  const blogListings = props.pageContext.blogs;
+  const blogListings
+  if (props.pageContext.blogs) {
+    blogListings = props.pageContext.blogs;
+  } else {
+    blogListings = null;
+  }
 
   return (
     <Layout>
