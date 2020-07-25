@@ -4,6 +4,5 @@
   Functions = ""
 
 [Build.environment]
-  YARN_VERSION = "1.9.2"
   NODE_ENV = "PRODUCTION"
 
