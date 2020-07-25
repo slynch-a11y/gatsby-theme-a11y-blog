@@ -6,10 +6,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Input, Button, Box } from "theme-ui";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import { GlobalDispatchContext } from "../context/GlobalContextProvider";
+import { GlobalDispatchContext } from "../context/GlobalContextProvider";
 
 export function Search(props) {
-//   const dispatch = useContext(GlobalDispatchContext);
+  const dispatch = useContext(GlobalDispatchContext);
 
   const [searchTerm, setSearchTerm] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
@@ -50,7 +50,7 @@ export function Search(props) {
           value={searchTerm}
           onChange={handleChange}
         />
-        {/* <Button
+         <Button
           variant="search"
           type="submit"
           class="search-button"
@@ -63,7 +63,7 @@ export function Search(props) {
           }}
         >
           <FontAwesomeIcon icon={faSearch} aria-hidden="true" /> Search
-        </Button> */}
+        </Button> 
       </div>
     </Box>
   );

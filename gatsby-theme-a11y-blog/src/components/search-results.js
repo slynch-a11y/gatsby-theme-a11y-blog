@@ -3,18 +3,16 @@ import React, { useContext } from "react";
 import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
 import { Link } from "gatsby";
-// import { GlobalStateContext } from "../context/GlobalContextProvider";
+import { GlobalStateContext } from "../context/GlobalContextProvider";
 
 export default (SearchResults) => {
-//   const state = useContext(GlobalStateContext);
+  const state = useContext(GlobalStateContext);
 
   return (
     <>
-    hello    </>
-  );
-};
+    
 
-      {/* {state.searchResults.length ? (
+      {state.searchResults.length ? (
         <div sx={{ marginTop: "20px" }}>
           <ul sx={{ listStyleType: "none" }}>
             {state.searchResults.map((page) => (
@@ -26,4 +24,7 @@ export default (SearchResults) => {
             ))}
           </ul>
         </div>
-      ) : null} */}
+      ) : null}
+</>
+  );
+};
