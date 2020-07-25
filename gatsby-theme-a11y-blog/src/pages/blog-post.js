@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Styled } from "theme-ui";
 
-export default function BlotPost(props) {
+export default function BlogPost(props) {
   const {
     title,
     html,
