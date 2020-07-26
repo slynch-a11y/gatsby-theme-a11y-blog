@@ -90,6 +90,16 @@ export default {
     logo: {
       color: "headerText",
       textDecoration: "none",
+      ":hover": {
+        textDecoration: "none",
+        color: "headerText",
+      },
+      ":focus": {
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        outlineColor: "headerText",
+        color: "headerText",
+      },
     },
     nav: {
       px: 2,
