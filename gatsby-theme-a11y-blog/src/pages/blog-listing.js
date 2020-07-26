@@ -11,7 +11,7 @@ export default function BlogListing(props) {
     <Layout>
       <SEO title="Blog" />
       <Styled.h1>Blog</Styled.h1>
-      {blogListings.map((blog, index) => {
+      { blogListings ? blogListings.map((blog, index) => {
         return (
           <div key={index}>
             <Styled.h2>
@@ -22,7 +22,7 @@ export default function BlogListing(props) {
             <p>{blog.node.excerpt}</p>
           </div>
         );
-      })}
+      }) : null}
     </Layout>
   );
 }
