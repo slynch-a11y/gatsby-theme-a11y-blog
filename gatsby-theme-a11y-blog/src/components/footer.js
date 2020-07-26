@@ -1,14 +1,23 @@
 import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Styled, NavLink, Flex } from "theme-ui";
 
 export function Footer(props) {
-  const { email, twitter, linkedIn } = props.data.site.siteMetadata.social;
+  const {
+    email,
+    twitter,
+    linkedIn,
+    github,
+  } = props.data.site.siteMetadata.social;
 
   return (
     <footer sx={{ marginTop: "200px" }}>
@@ -30,36 +39,54 @@ export function Footer(props) {
           }}
         >
           <ul sx={{ listStyleType: "none" }}>
-            <li sx={{ display: "inline-block" }}>
-              <NavLink
-                variant="socialNav"
-                href={"mailto:" + email}
-                aria-label="Email"
-                title="Email"
-              >
-                <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
-              </NavLink>
-            </li>
-            <li sx={{ display: "inline-block" }}>
-              <NavLink
-                variant="socialNav"
-                href={"https://twitter.com/" + twitter}
-                aria-label="Twitter"
-                title="Twitter"
-              >
-                <FontAwesomeIcon icon={faTwitter} aria-hidden="true" />
-              </NavLink>
-            </li>
-            <li sx={{ display: "inline-block" }}>
-              <NavLink
-                variant="socialNav"
-                href={"https://www.linkedin.com/in/" + linkedIn}
-                aria-label="LinkedIn"
-                title="LinkedIn"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} aria-hidden="true" />
-              </NavLink>
-            </li>
+            {twitter.length ? (
+              <li sx={{ display: "inline-block" }}>
+                <NavLink
+                  variant="socialNav"
+                  href={"https://twitter.com/" + twitter}
+                  aria-label="Twitter"
+                  title="Twitter"
+                >
+                  <FontAwesomeIcon icon={faTwitter} aria-hidden="true" />
+                </NavLink>
+              </li>
+            ) : null}
+            {linkedIn.length ? (
+              <li sx={{ display: "inline-block" }}>
+                <NavLink
+                  variant="socialNav"
+                  href={"https://www.linkedin.com/in/" + linkedIn}
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <FontAwesomeIcon icon={faLinkedinIn} aria-hidden="true" />
+                </NavLink>
+              </li>
+            ) : null}
+            {github.length ? (
+              <li sx={{ display: "inline-block" }}>
+                <NavLink
+                  variant="socialNav"
+                  href={"https://www.github.com/" + github}
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
+                </NavLink>
+              </li>
+            ) : null}
+            {email.length ? (
+              <li sx={{ display: "inline-block" }}>
+                <NavLink
+                  variant="socialNav"
+                  href={"mailto:" + email}
+                  aria-label="Email"
+                  title="Email"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
+                </NavLink>
+              </li>
+            ) : null}
           </ul>
         </Flex>
 
@@ -84,6 +111,7 @@ export default (props) => (
               twitter
               linkedIn
               email
+              github
             }
           }
         }
