@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 /** @jsx jsx */
 import { Styled, Grid, jsx, Card } from "theme-ui";
-import twoCats from "../images/two_cats.jpg";
 
-export default function HomePage(props) {
+export function HomePage(props) {
   const blogListings = props.pageContext.blogs;
-
+   
+  const featuredImage = props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImage;
+  const featuredImageAlt = props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImageAlt;
+  const featuredImageCaption = props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImageCaption;
+  const html = props.data.allMarkdownRemark.nodes[0].html
+  console.log("props: ", props)
   return (
     <Layout>
       <SEO title="Home" />
@@ -16,24 +22,16 @@ export default function HomePage(props) {
         <div>
           <Styled.h1>Welcome</Styled.h1>{" "}
           <Card variant="secondary">
-            <figure><img src={twoCats} alt="" />
+            <figure>{featuredImage ? <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} /> : null }
             
-            <figcaption>Two cats sitting next to each other.  One is wearing a bowtie and the other is wearing a tie.</figcaption></figure>
+            <figcaption>{featuredImageCaption}</figcaption></figure>
           </Card>
         </div>
         <div>
           <Styled.h2>About Me</Styled.h2>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna
-            condimentum mattis pellentesque id nibh tortor id aliquet. Quis
-            hendrerit dolor magna eget est lorem ipsum dolor sit. Sed tempus
-            urna et pharetra pharetra massa massa. Vitae et leo duis ut diam
-            quam nulla porttitor massa. Pellentesque habitant morbi tristique
-            senectus et netus et malesuada. Eleifend mi in nulla posuere
-            sollicitudin. Turpis egestas maecenas pharetra convallis posuere
-            morbi leo urna. Tempor nec feugiat nisl pretium fusce id velit.
+          <div dangerouslySetInnerHTML={{ __html: html }} />
           </p>
         </div>
       </Grid>
@@ -60,3 +58,44 @@ export default function HomePage(props) {
     </Layout>
   );
 }
+
+
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query {
+       
+          allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/src/markdown/"}, frontmatter: {title: {eq: "Home"}}}) {
+              nodes {
+                html
+                frontmatter {
+                  title
+                  featuredImageAlt
+                  featuredImageCaption
+                  featuredImage {
+                    childImageSharp {
+                      fluid(maxWidth: 800) {
+                          src
+                          srcSet
+                          srcSetWebp
+                          base64
+                          aspectRatio
+                        }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        
+      
+    `}
+    render={(data) => <HomePage data={data} {...props} />}
+  />
+);
+HomePage.propTypes = {
+  data: PropTypes.shape({
+      allMarkdownRemark: PropTypes.isRequired
+      }).isRequired
+};
+
