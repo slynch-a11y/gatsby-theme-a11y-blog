@@ -172,7 +172,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
                 description
                 image {
                   childImageSharp {
-                    fixed(height: 150, width: 200, cropFocus: CENTER) {
+                    fixed(height: 150, width: 250, cropFocus: CENTER) {
                       base64
                       aspectRatio
                       srcWebp
