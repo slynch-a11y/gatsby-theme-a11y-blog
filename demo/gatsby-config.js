@@ -1,16 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: "Gatsby A11y-Ready Theme",
-    author: "Sarah E. Lynch",
-    tagline: "accessibility engineer",
+    author: "Your Name",
+    tagline: "a tagline here",
     url: "",
     description: "An accessibility-ready Gatsby theme.",
     image: "",
     social: {
-      twitter: "sarah_e_lynch",
-      linkedIn: "sarah-lynch-7257028",
-      email: "sarah@alum.rpi.edu",
-      github: "slynch-a11y",
+      twitter: "twitter_handle",
+      linkedIn: "linkedin",
+      email: "sample@mail.com",
+      github: "github",
     },
   },
   plugins: [

@@ -46,7 +46,7 @@ export default function PortfolioListing(props) {
                   <Styled.h2 sx={{ color: "black" }}>
                     {portfolio.node.frontmatter.title}
                   </Styled.h2>
-                  <Text sx={{ color: "black" }}>GitHub | Demo</Text>
+                  <Text sx={{ color: "black" }}>Source | Demo</Text>
                 </Card>
               </li>
             );
