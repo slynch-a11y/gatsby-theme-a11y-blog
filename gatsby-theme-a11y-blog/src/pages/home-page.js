@@ -40,7 +40,7 @@ export default function HomePage(props) {
       <div>
         <Styled.h2 sx={{ marginTop: "50px" }}>Most Recent Blog Posts</Styled.h2>
 
-        {blogListings.map((blog, index) => {
+        { blogListings ? blogListings.map((blog, index) => {
           if (index <= 1) {
             return (
               <div key={index}>
@@ -55,7 +55,7 @@ export default function HomePage(props) {
           } else {
             return null;
           }
-        })}
+        }) : null}
       </div>
     </Layout>
   );

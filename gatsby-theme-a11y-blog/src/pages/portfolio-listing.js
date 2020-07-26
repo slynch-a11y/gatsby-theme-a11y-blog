@@ -26,7 +26,7 @@ export default function PortfolioListing(props) {
             py: 4,
           }}
         >
-          {portfolioListings.map((portfolio, index) => {
+          { portfolioListings ? portfolioListings.map((portfolio, index) => {
             return (
               <li key={index}>
                 <Card
@@ -51,7 +51,7 @@ export default function PortfolioListing(props) {
                 </Card>
               </li>
             );
-          })}
+          }) : null}
         </ul>
       </div>
     </Layout>
