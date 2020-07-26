@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby A11y-Ready Theme",
     author: "Sarah Lynch",
+    tagline: "accessibility engineer",
     url: "",
     description: "An accessibility-ready Gatsby theme.",
     image: "",
@@ -39,6 +40,9 @@ module.exports = {
           },
           {
             family: `Poppins`,
+          },
+          {
+            family: `Sacramento`,
           },
         ],
       },

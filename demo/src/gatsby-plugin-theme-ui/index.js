@@ -87,6 +87,10 @@ export default {
     },
   },
   links: {
+    logo: {
+      color: "headerText",
+      textDecoration: "none",
+    },
     nav: {
       px: 2,
       py: 2,

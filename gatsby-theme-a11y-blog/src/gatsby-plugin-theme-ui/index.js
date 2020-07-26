@@ -87,6 +87,9 @@ export default {
     },
   },
   links: {
+    logo: {
+      color: "headerText",
+    },
     nav: {
       px: 2,
       py: 2,
@@ -142,7 +145,7 @@ export default {
       fontSize: 3,
     },
     a: {
-      color: "primary",
+      color: "black",
 
       ":hover": {
         textDecoration: "none",

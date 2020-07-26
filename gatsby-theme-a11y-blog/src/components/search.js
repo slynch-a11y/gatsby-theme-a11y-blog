@@ -35,7 +35,7 @@ export function Search(props) {
 
   return (
     <Box as="form" class="search" id="js-search" role="search">
-      <div sx={{ whiteSpace: "nowrap" }}>
+      <div sx={{ whiteSpace: "nowrap", marginTop: "5px" }}>
         <Input
           sx={{
             color: "accent",
