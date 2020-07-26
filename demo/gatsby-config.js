@@ -8,9 +8,9 @@ module.exports = {
     image: "",
     social: {
       twitter: "twitter_handle",
-      linkedIn: "linkedin",
+      linkedIn: "your_profile_here",
       email: "sample@mail.com",
-      github: "github",
+      github: "your_profile_here",
     },
   },
   plugins: [
