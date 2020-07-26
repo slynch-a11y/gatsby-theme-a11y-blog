@@ -22,7 +22,6 @@ export default function PortfolioListing(props) {
             gridGap: 3,
             gridTemplateColumns: "repeat(auto-fit, minmax(256px, 1fr))",
             m: 0,
-            px: 1,
             py: 4,
           }}
         >

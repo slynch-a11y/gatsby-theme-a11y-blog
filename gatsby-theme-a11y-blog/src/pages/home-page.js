@@ -14,7 +14,7 @@ export default function HomePage(props) {
       <SEO title="Home" />
       <Grid gap={5} width={[240]}>
         <div>
-          <Styled.h1>Welcome to my Site</Styled.h1>{" "}
+          <Styled.h1>Welcome</Styled.h1>{" "}
           <Card variant="secondary">
             <figure><img src={twoCats} alt="" />
             
