@@ -11,6 +11,7 @@ export default (Menu) => {
       css={css`
         margin-bottom: -25px;
         margin-left: -30px;
+        margin-top: 5px;
       `}
     >
       <Flex>
