@@ -48,7 +48,7 @@ export default (Header) => {
         <div sx={{ width: "85%", margin: "auto" }}>
           <div
             sx={{
-              p: 4,
+              p: 3,
 
               display: "flex",
               justifyContent: "space-between",

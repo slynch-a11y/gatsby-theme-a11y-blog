@@ -89,6 +89,18 @@ export default {
   links: {
     logo: {
       color: "headerText",
+      textDecoration: "none",
+      ":hover": {
+        textDecoration: "none",
+        color: "headerText",
+      },
+      ":focus": {
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        outlineColor: "headerText",
+        color: "headerText",
+        outlineOffset: "8px",
+      },
     },
     nav: {
       px: 2,
@@ -145,7 +157,7 @@ export default {
       fontSize: 3,
     },
     a: {
-      color: "black",
+      color: "primary",
 
       ":hover": {
         textDecoration: "none",
@@ -155,6 +167,7 @@ export default {
         outlineWidth: "3px",
         outlineStyle: "solid",
         textDecoration: "none",
+        outlineOffset: "4px",
       },
       "&.active": {
         color: "yellow",

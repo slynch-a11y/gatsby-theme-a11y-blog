@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby A11y-Ready Theme",
     author: "Your Name",
-    tagline: "a tagline here",
+    tagline: "add a tagline",
     url: "",
     description: "An accessibility-ready Gatsby theme.",
     image: "",
@@ -14,7 +14,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
     {
       resolve: "@slynch-a11y/gatsby-theme-a11y-blog",
       options: {
