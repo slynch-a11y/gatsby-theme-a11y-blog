@@ -1,6 +1,6 @@
 {
   "name": "@slynch-a11y/gatsby-theme-a11y-blog",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "index.js",
   "scripts": {

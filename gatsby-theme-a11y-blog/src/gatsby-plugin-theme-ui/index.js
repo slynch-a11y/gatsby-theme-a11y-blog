@@ -139,6 +139,8 @@ export default {
     root: {
       lineHeight: "body",
       fontWeight: "body",
+      backgroundColor: "background",
+      color: "text",
     },
     h1: {
       // the style object for each element
