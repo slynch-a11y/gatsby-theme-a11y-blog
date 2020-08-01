@@ -22,8 +22,10 @@ export function Logo(props) {
           {author}
         </span>
         <br />
-        <div sx={{ mx: "auto", maxWidth: "container" }}>
-          <span sx={{ marginLeft: "20px", fontWeight: "200" }}>{tagline}</span>
+        <div sx={{ mx: "auto", maxWidth: "200px" }}>
+          <span sx={{ fontWeight: "200", whiteSpace: "nowrap" }}>
+            {tagline}
+          </span>
         </div>
       </NavLink>
     </div>

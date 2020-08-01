@@ -139,7 +139,7 @@ export default {
     root: {
       lineHeight: "body",
       fontWeight: "body",
-      backgroundColor: "background",
+      bg: "background",
       color: "text",
     },
     h1: {
