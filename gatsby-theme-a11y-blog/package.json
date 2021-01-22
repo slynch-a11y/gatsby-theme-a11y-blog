@@ -1,6 +1,6 @@
 {
   "name": "@slynch-a11y/gatsby-theme-a11y-blog",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.13.1",
-    "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-plugin-theme-ui": "^0.3.5",
     "gatsby-plugin-typography": "^2.5.10",
     "gatsby-plugin-webfonts": "^1.1.4",
     "gatsby-source-filesystem": "^2.3.18",
@@ -49,7 +49,7 @@
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
-    "theme-ui": "^0.3.1",
+    "theme-ui": "^0.3.5",
     "typography": "^0.16.19"
   }
 }
