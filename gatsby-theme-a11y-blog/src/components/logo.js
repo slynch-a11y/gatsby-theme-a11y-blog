@@ -2,8 +2,6 @@ import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Styled, NavLink } from "theme-ui";
-import { Link } from "gatsby";
 
 export function Logo(props) {
   const author = props.data.site.siteMetadata.author;
@@ -11,7 +9,7 @@ export function Logo(props) {
   return (
     <div sx={{}}>
      
-      <NavLink as={Link} variant="socialNav" to="/">
+    
         <span
           sx={{
             fontFamily: "Sacramento",
@@ -24,8 +22,7 @@ export function Logo(props) {
         <div sx={{ display: "flex", justifyContent: "center" }}>
       <span sx={{ fontWeight: "200", fontSize: 3, whiteSpace: "nowrap" }}>{tagline}</span>
      </div>
-      
-      </NavLink>
+     
     </div>
   );
 }

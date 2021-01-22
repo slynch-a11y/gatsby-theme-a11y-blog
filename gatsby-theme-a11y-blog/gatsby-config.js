@@ -32,19 +32,22 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-          },
-          {
-            family: `Poppins`,
-          },
-          {
-            family: `Sacramento`,
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["300", "400", "500"],
+            },
+            {
+              family: `Poppins`,
+            },
+            {
+              family: `Sacramento`,
+            },
+          ],
+        },
       },
     },
     `gatsby-plugin-theme-ui`,
