@@ -53,15 +53,19 @@ export default {
       color: "accent",
     },
     input: {
-      borderColor: "accent",
-      borderWidth: "1px",
-      backgroundColor: "primary",
+      borderColor: "primary",
+      borderWidth: "2px",
+      backgroundColor: "secondary",
       ":focus": {
         backgroundColor: "#f5f6f8",
         color: "black",
+        outlineColor: "primary",
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        outlineOffset: "1px",
       },
       "&::placeholder": {
-        color: "accent",
+        color: "black",
         fontWeight: "700",
       },
     },
@@ -69,20 +73,32 @@ export default {
   //#F5AB98 = pink/salmon accent color
   buttons: {
     toggle: {
-      color: "secondary",
+      color: "primary",
+      backgroundColor: "secondary",
       fontSize: 4,
       ":focus": {
-        outlineColor: "accent",
+        outlineColor: "primary",
         outlineWidth: "3px",
         outlineStyle: "solid",
       },
     },
     search: {
-      color: "text",
+      color: "primary",
       bg: "secondary",
+      borderStyle: "solid",
+      borderWidth: "1px",
+      borderColor: "primary",
       ":focus": {
-        backgroundColor: "#f5f6f8",
-        color: "black",
+        outlineColor: "primary",
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        outlineOffset: "1px",
+        backgroundColor: "secondary",
+        color: "primary"
+      },
+      ":hover": {
+        backgroundColor: "primary",
+        color: "secondary"
       },
     },
   },
@@ -107,18 +123,18 @@ export default {
       py: 2,
       textTransform: "uppercase",
       letterSpacing: "0.2em",
-      color: "accent",
-      fontSize: "2",
+      color: "primary",
+      fontSize: "3",
 
       ":hover": {
         textDecoration: "underline",
-        color: "accent",
+        textUnderlineOffset: "4px"
       },
       ":focus": {
         outlineWidth: "3px",
         outlineStyle: "solid",
-        outlineColor: "accent",
-        color: "accent",
+        outlineColor: "primary",
+        color: "primary",
       },
     },
     socialNav: {
@@ -141,6 +157,7 @@ export default {
       fontWeight: "body",
       bg: "background",
       color: "text",
+      fontSize: 3
     },
     h1: {
       // the style object for each element

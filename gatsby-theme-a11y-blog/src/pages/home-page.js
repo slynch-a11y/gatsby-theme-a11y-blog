@@ -24,8 +24,8 @@ export function HomePage(props) {
       <Grid gap={5} width={[240]}>
         <div>
           <Styled.h1>Welcome</Styled.h1>{" "}
-          <Card variant="secondary">
-            <figure>
+          <Card variant="primary" sx={{ marginTop: "30px" }}>
+          
               {featuredImage ? (
                 <Img
                   fluid={featuredImage.childImageSharp.fluid}
@@ -33,8 +33,7 @@ export function HomePage(props) {
                 />
               ) : null}
 
-              <figcaption>{featuredImageCaption}</figcaption>
-            </figure>
+             
           </Card>
         </div>
         <div>

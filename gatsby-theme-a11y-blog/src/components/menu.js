@@ -18,13 +18,13 @@ export default (Menu) => {
         <nav aria-label="primary">
           <ul sx={{ listStyleType: "none" }}>
             <li sx={{ display: "inline-block" }}>
-              <NavLink as={Link} to="/blog" p={1}>
-                Blog
+              <NavLink as={Link} to="/" px={3}>
+                Home
               </NavLink>
             </li>
             <li sx={{ display: "inline-block" }}>
-              <NavLink as={Link} to="/portfolio" p={1}>
-                Portfolio
+            <NavLink as={Link} to="/blog" px={3}>
+                Blog
               </NavLink>
             </li>
           </ul>

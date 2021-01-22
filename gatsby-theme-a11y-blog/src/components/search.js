@@ -38,9 +38,9 @@ export function Search(props) {
       <div sx={{ whiteSpace: "nowrap", marginTop: "5px" }}>
         <Input
           sx={{
-            color: "accent",
+            
             display: "inline",
-            width: "150px",
+            width: "7rem",
             marginRight: "5px",
           }}
           type="text"

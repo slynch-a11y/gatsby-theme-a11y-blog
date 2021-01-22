@@ -9,8 +9,9 @@ export function Logo(props) {
   const author = props.data.site.siteMetadata.author;
   const tagline = props.data.site.siteMetadata.tagline;
   return (
-    <div sx={{ marginRight: "20px", marginBottom: "10px" }}>
-      <NavLink as={Link} variant="logo" to="/">
+    <div sx={{}}>
+     
+      <NavLink as={Link} variant="socialNav" to="/">
         <span
           sx={{
             fontFamily: "Sacramento",
@@ -18,15 +19,12 @@ export function Logo(props) {
             fontWeight: "200",
             whiteSpace: "nowrap",
           }}
-        >
-          {author}
-        </span>
+        >{author}</span>
         <br />
-        <div sx={{ mx: "auto", maxWidth: "200px" }}>
-          <span sx={{ fontWeight: "200", whiteSpace: "nowrap" }}>
-            {tagline}
-          </span>
-        </div>
+        <div sx={{ display: "flex", justifyContent: "center" }}>
+      <span sx={{ fontWeight: "200", fontSize: 3, whiteSpace: "nowrap" }}>{tagline}</span>
+     </div>
+      
       </NavLink>
     </div>
   );

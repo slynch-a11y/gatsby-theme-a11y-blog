@@ -39,12 +39,7 @@ export default (Header) => {
           Skip to Main Content
         </Styled.a>
       </div>
-      <div
-        sx={{
-          color: "background",
-          bg: "primary",
-        }}
-      >
+      <div>
         <div sx={{ width: "85%", margin: "auto" }}>
           <div
             sx={{
@@ -53,7 +48,7 @@ export default (Header) => {
               display: "flex",
               justifyContent: "space-between",
 
-              "@media screen and (max-width: 800px)": {
+              "@media screen and (max-width: 50rem)": {
                 flexWrap: "wrap",
                 justifyContent: "center",
               },
