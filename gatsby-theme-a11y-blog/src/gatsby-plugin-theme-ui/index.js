@@ -1,11 +1,3 @@
-// import { polaris } from '@theme-ui/presets'
-// export default {
-//   ...polaris,
-//   styles: {
-//     ...polaris.styles,
-    
-//   },
-// }
 
 export default {
   breakpoints: ["40em", "52em", "64em"],
