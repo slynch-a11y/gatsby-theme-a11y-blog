@@ -1,3 +1,12 @@
+// import { polaris } from '@theme-ui/presets'
+// export default {
+//   ...polaris,
+//   styles: {
+//     ...polaris.styles,
+    
+//   },
+// }
+
 export default {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -31,6 +40,48 @@ export default {
         muted: "#98c1d9",
       },
     },
+  },
+  styles: {
+    // the keys used here reference elements in MDX
+    root: {
+      lineHeight: "body",
+      fontWeight: "body",
+      bg: "background",
+      color: "text",
+      fontSize: 3
+    },
+    h1: {
+      // the style object for each element
+      // can reference other values in the theme
+
+      fontWeight: "heading",
+      lineHeight: "heading",
+      marginTop: 0,
+      marginBottom: 3,
+      fontSize: 5,
+    },
+    h2: {
+      fontSize: 4,
+    },
+    h3: {
+      fontSize: 3,
+    },
+    a: {
+      color: "primary",
+
+      ":hover": {
+        textDecoration: "none",
+      },
+      ":focus": {
+        outlineColor: "muted",
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        textDecoration: "none",
+        outlineOffset: "4px",
+      },
+   
+    },
+    // more styles can be added as needed
   },
   cards: {
     primary: {
@@ -150,49 +201,5 @@ export default {
     },
   },
 
-  styles: {
-    // the keys used here reference elements in MDX
-    root: {
-      lineHeight: "body",
-      fontWeight: "body",
-      bg: "background",
-      color: "text",
-      fontSize: 3
-    },
-    h1: {
-      // the style object for each element
-      // can reference other values in the theme
-
-      fontWeight: "heading",
-      lineHeight: "heading",
-      marginTop: 0,
-      marginBottom: 3,
-      fontSize: 5,
-    },
-    h2: {
-      fontSize: 4,
-    },
-    h3: {
-      fontSize: 3,
-    },
-    a: {
-      color: "primary",
-
-      ":hover": {
-        textDecoration: "none",
-      },
-      ":focus": {
-        outlineColor: "muted",
-        outlineWidth: "3px",
-        outlineStyle: "solid",
-        textDecoration: "none",
-        outlineOffset: "4px",
-      },
-      "&.active": {
-        color: "yellow",
-        textDecoration: "none",
-      },
-    },
-    // more styles can be added as needed
-  },
+  
 };

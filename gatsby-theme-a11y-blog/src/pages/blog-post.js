@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Styled } from "theme-ui";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default function BlogPost(props) {
   const {
@@ -24,7 +25,8 @@ export default function BlogPost(props) {
       { featuredImage ? 
       <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} />
       : null }
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRenderer>{html}</MDXRenderer>
+     
       <hr />
       <ul
         style={{
@@ -37,14 +39,14 @@ export default function BlogPost(props) {
       >
         <li>
           {previous && (
-            <Styled.a as={Link} to={previous.fields.slug} rel="prev">
+            <Styled.a as={Link} to={"/"+previous.slug} rel="prev">
               ← {previous.frontmatter.title}
             </Styled.a>
           )}
         </li>
         <li>
           {next && (
-            <Styled.a as={Link} to={next.fields.slug} rel="next">
+            <Styled.a as={Link} to={"/"+next.slug} rel="next">
               {next.frontmatter.title} →
             </Styled.a>
           )}

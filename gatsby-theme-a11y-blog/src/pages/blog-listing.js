@@ -15,7 +15,7 @@ export default function BlogListing(props) {
         return (
           <div key={index}>
             <Styled.h2>
-              <Styled.a as={Link} to={blog.node.fields.slug}>
+              <Styled.a as={Link} to={"/"+blog.node.slug}>
                 {blog.node.frontmatter.title}
               </Styled.a>
             </Styled.h2>

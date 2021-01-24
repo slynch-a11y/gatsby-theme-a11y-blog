@@ -3,7 +3,11 @@ import Header from "./header";
 import Footer from "./footer";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Container } from "theme-ui";
+import { Container, Styled } from "theme-ui";
+import { MDXProvider } from "@mdx-js/react"
+import { Link } from "gatsby"
+
+const shortcodes = { Link, jsx, Styled }
 
 export default function Layout({ children }) {
   return (
@@ -14,7 +18,7 @@ export default function Layout({ children }) {
           <div sx={{ marginTop: "50px" }}>
             <div sx={{ marginBottom: "30px" }} />
 
-            {children}
+           {children}
           </div>
         </main>
         <Footer />

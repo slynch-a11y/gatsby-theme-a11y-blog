@@ -6,17 +6,18 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 /** @jsx jsx */
 import { Styled, Grid, jsx, Card } from "theme-ui";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export function HomePage(props) {
   const blogListings = props.pageContext.blogs;
 
   const featuredImage =
-    props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImage;
+    props.data.allMdx.nodes[0].frontmatter.featuredImage;
   const featuredImageAlt =
-    props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImageAlt;
-  const featuredImageCaption =
-    props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImageCaption;
-  const html = props.data.allMarkdownRemark.nodes[0].html;
+    props.data.allMdx.nodes[0].frontmatter.featuredImageAlt;
+  // const featuredImageCaption =
+  //   props.data.allMdx.nodes[0].frontmatter.featuredImageCaption;
+  // const html = props.data.allMdx.nodes[0].html;
 
   return (
     <Layout>
@@ -38,10 +39,8 @@ export function HomePage(props) {
         </div>
         <div>
           <Styled.h2>About Me</Styled.h2>
-
-          <p>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </p>
+         <MDXRenderer>{props.data.allMdx.nodes[0].body}</MDXRenderer>
+       
         </div>
       </Grid>
       <div>
@@ -53,7 +52,7 @@ export function HomePage(props) {
                 return (
                   <div key={index}>
                     <Styled.h3 sx={{ marginBottom: "0.5rem" }}>
-                      <Styled.a as={Link} to={blog.node.fields.slug}>
+                      <Styled.a as={Link} to={blog.node.slug}>
                         {blog.node.frontmatter.title}
                       </Styled.a>
                     </Styled.h3>
@@ -74,14 +73,14 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
+        allMdx(
           filter: {
             fileAbsolutePath: { regex: "/src/markdown/" }
             frontmatter: { title: { eq: "Home" } }
           }
         ) {
           nodes {
-            html
+            body
             frontmatter {
               title
               featuredImageAlt
@@ -107,6 +106,6 @@ export default (props) => (
 );
 HomePage.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.isRequired,
+    allMdx: PropTypes.isRequired,
   }).isRequired,
 };

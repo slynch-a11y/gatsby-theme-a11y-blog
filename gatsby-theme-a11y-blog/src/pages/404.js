@@ -8,11 +8,11 @@ import Img from "gatsby-image";
 import { Styled } from "theme-ui";
 
 export function PageNotFound(props) {
-  const text = props.data.allMarkdownRemark.nodes[0].frontmatter.text;
+  const text = props.data.allMdx.nodes[0].frontmatter.text;
   const featuredImage =
-    props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImage;
+    props.data.allMdx.nodes[0].frontmatter.featuredImage;
   const featuredImageAlt =
-    props.data.allMarkdownRemark.nodes[0].frontmatter.featuredImageAlt;
+    props.data.allMdx.nodes[0].frontmatter.featuredImageAlt;
 
   return (
     <Layout>
@@ -38,7 +38,7 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
+        allMdx(
           filter: {
             fileAbsolutePath: { regex: "/src/markdown/" }
             frontmatter: { title: { eq: "Page Not Found" } }
@@ -70,6 +70,6 @@ export default (props) => (
 );
 PageNotFound.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.isRequired,
+    allMdx: PropTypes.isRequired,
   }).isRequired,
 };

@@ -21,6 +21,12 @@ module.exports = {
         name: "markdown",
       },
     },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
+      },
+    },
     "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-sharp`,

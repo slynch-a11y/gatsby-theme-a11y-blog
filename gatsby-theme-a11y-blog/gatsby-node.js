@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
   const blogResult = await graphql(
     `
       query {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: frontmatter___date, order: DESC }
           filter: {
             parent: {}
@@ -51,10 +51,8 @@ exports.createPages = async ({ graphql, actions }, options) => {
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
-              html
+              slug
+              body
               frontmatter {
                 title
                 tags
@@ -97,7 +95,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
 
   const blogPath = "blog";
   const blogPost = require.resolve(`./src/pages/blog-post.js`);
-  const blogPosts = blogResult.data.allMarkdownRemark.edges;
+  const blogPosts = blogResult.data.allMdx.edges;
 
   blogPosts.forEach((post, index) => {
     const previous =
@@ -106,14 +104,14 @@ exports.createPages = async ({ graphql, actions }, options) => {
 
     //create blog pages
     createPage({
-      path: post.node.fields.slug,
+      path: post.node.slug,
       component: blogPost,
       context: {
         title: post.node.frontmatter.title,
         date: post.node.frontmatter.date,
         tags: post.node.frontmatter.tags,
         description: post.node.frontmatter.description,
-        html: post.node.html,
+        html: post.node.body,
         blogPath,
         previous,
         next,
@@ -152,7 +150,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
   const result = await graphql(
     `
       query {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: frontmatter___date, order: DESC }
           filter: {
             parent: {}
@@ -161,10 +159,8 @@ exports.createPages = async ({ graphql, actions }, options) => {
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
-              html
+              slug
+              body
               frontmatter {
                 title
                 tags
@@ -204,7 +200,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
     throw result.errors;
   }
 
-  const portfolioPosts = result.data.allMarkdownRemark.edges;
+  const portfolioPosts = result.data.allMdx.edges;
   const portfolioPath = "portfolio";
 
   //create portfolio listing page
