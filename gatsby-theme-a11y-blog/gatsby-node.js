@@ -111,7 +111,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
         date: post.node.frontmatter.date,
         tags: post.node.frontmatter.tags,
         description: post.node.frontmatter.description,
-        html: post.node.body,
+        body: post.node.body,
         blogPath,
         previous,
         next,

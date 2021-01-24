@@ -9,7 +9,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 export default function BlogPost(props) {
   const {
     title,
-    html,
+    body,
     date,
     previous,
     next,
@@ -25,7 +25,7 @@ export default function BlogPost(props) {
       { featuredImage ? 
       <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} />
       : null }
-        <MDXRenderer>{html}</MDXRenderer>
+        <MDXRenderer>{body}</MDXRenderer>
      
       <hr />
       <ul
