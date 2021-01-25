@@ -53,6 +53,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
             node {
               slug
               body
+              id
               frontmatter {
                 title
                 tags
@@ -112,6 +113,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
         tags: post.node.frontmatter.tags,
         description: post.node.frontmatter.description,
         body: post.node.body,
+        id: post.node.id,
         blogPath,
         previous,
         next,

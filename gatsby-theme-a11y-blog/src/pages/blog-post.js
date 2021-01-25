@@ -1,57 +1,54 @@
-import React from "react";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { Styled } from "theme-ui";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from 'react';
 
-export default function BlogPost(props) {
-  const {
-    title,
-    body,
-    date,
-    previous,
-    next,
-    featuredImage,
-    featuredImageAlt,
-  } = props.pageContext;
+import { graphql, Link } from 'gatsby';
 
-  return (
-    <Layout>
-      <SEO title={title} />
-      <Styled.h1>{title}</Styled.h1>
-      <p>{date}</p>
-      { featuredImage ? 
-      <Img fluid={featuredImage.childImageSharp.fluid} alt={featuredImageAlt} />
-      : null }
-        <MDXRenderer>{body}</MDXRenderer>
-     
-      <hr />
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Styled.a as={Link} to={"/"+previous.slug} rel="prev">
-              ← {previous.frontmatter.title}
-            </Styled.a>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Styled.a as={Link} to={"/"+next.slug} rel="next">
-              {next.frontmatter.title} →
-            </Styled.a>
-          )}
-        </li>
-      </ul>
-    </Layout>
-  );
+
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { Styled } from 'theme-ui';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+
+export default function BlogPost({ data: {mdx} }) {
+	return (
+		<Layout>
+		
+			<SEO title={mdx.frontmatter.title} />
+			<Styled.h1>{mdx.frontmatter.title}</Styled.h1>
+			<p>{mdx.frontmatter.date}</p>
+			{mdx.frontmatter.featuredImage ? <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} alt={mdx.frontmatter.featuredImageAlt} /> : null}
+			<MDXRenderer>{mdx.body}</MDXRenderer>
+
+			<hr />
+		
+		</Layout>
+	);
 }
+
+export const pageQuery = graphql`
+	query BlogPostQuery($id: String) {
+    
+		mdx(id: { eq: $id }) {
+			id
+      body
+      slug
+      
+			frontmatter {
+				title
+				featuredImageAlt
+				featuredImageCaption
+				featuredImage {
+					childImageSharp {
+						fluid(maxWidth: 800) {
+							src
+							srcSet
+							srcSetWebp
+							base64
+							aspectRatio
+						}
+					}
+				}
+			}
+		}
+	}
+`;
