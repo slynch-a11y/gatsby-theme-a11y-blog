@@ -45,16 +45,14 @@ export function Search(props) {
           }}
           type="text"
           id="search"
-          aria-label="search"
+          aria-label="search this site"
           name="search"
           value={searchTerm}
           onChange={handleChange}
         />
         <Button
-          variant="search"
+          // variant="search"
           type="submit"
-          class="search-button"
-          aria-label="submit"
           onClick={(event) => {
             event.preventDefault();
             dispatch({ type: "SHOW_SEARCH_RESULTS", payload: searchResults });
@@ -62,7 +60,7 @@ export function Search(props) {
             navigate("/search");
           }}
         >
-          <FontAwesomeIcon icon={faSearch} aria-hidden="true" /> Search
+         <FontAwesomeIcon icon={faSearch} aria-hidden="true" /> Search
         </Button>
       </div>
     </Box>

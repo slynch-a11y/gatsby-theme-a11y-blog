@@ -13,28 +13,20 @@ export default {
     bold: 700,
   },
   colors: {
-    text: "black", //black text in main region
-    background: "#f5f6f8", //#e0fbfc light blue background color of main region
-    primary: "#3d5a80", //dark blue header color
-    secondary: "#f5f6f8", //#98c1d9 light blue color
-    headerText: "#fff", //white header text
-    accent: "white",
-    muted: "#3d5a80",
+    text: "black", 
+    background: "#f5f6f8", 
+    primary: "#3d5a80", //dark blue link and button color
 
     modes: {
       dark: {
-        text: "#fff", //white text in main region
-        background: "#293241", //dark blue background color of main region
-        primary: "#98c1d9", //light blue header color
-        secondary: "#293241", //dark blue color
-        headerText: "black", //black header text
-        accent: "black",
-        muted: "#98c1d9",
+        text: "#fff", 
+        background: "#293241", 
+        primary: "#98c1d9", //link and button color
+        
       },
     },
   },
   styles: {
-    // the keys used here reference elements in MDX
     root: {
       lineHeight: "body",
       fontWeight: "body",
@@ -43,8 +35,6 @@ export default {
       fontSize: 3
     },
     h1: {
-      // the style object for each element
-      // can reference other values in the theme
 
       fontWeight: "heading",
       lineHeight: "heading",
@@ -65,7 +55,7 @@ export default {
         textDecoration: "none",
       },
       ":focus": {
-        outlineColor: "muted",
+        outlineColor: "primary",
         outlineWidth: "3px",
         outlineStyle: "solid",
         textDecoration: "none",
@@ -73,7 +63,7 @@ export default {
       },
    
     },
-    // more styles can be added as needed
+    
   },
   cards: {
     primary: {
@@ -82,12 +72,7 @@ export default {
       borderRadius: 2,
       boxShadow: "0 0 8px black",
     },
-    secondary: {
-      padding: 2,
-      backgroundColor: "primary",
-      borderRadius: 2,
-      color: "headerText",
-    },
+   
   },
   forms: {
     label: {
@@ -98,7 +83,7 @@ export default {
     input: {
       borderColor: "primary",
       borderWidth: "2px",
-      backgroundColor: "secondary",
+    
       ":focus": {
         backgroundColor: "#f5f6f8",
         color: "black",
@@ -113,11 +98,20 @@ export default {
       },
     },
   },
-  //#F5AB98 = pink/salmon accent color
+ 
   buttons: {
+    primary: {
+      color: "background",
+    ":focus": {
+      outlineColor: "primary",
+      outlineWidth: "3px",
+      outlineStyle: "solid",
+      outlineOffset: "2px",
+},      
+  },
     toggle: {
       color: "primary",
-      backgroundColor: "secondary",
+      backgroundColor: "background",
       fontSize: 4,
       ":focus": {
         outlineColor: "primary",
@@ -125,47 +119,14 @@ export default {
         outlineStyle: "solid",
       },
     },
-    search: {
-      color: "primary",
-      bg: "secondary",
-      borderStyle: "solid",
-      borderWidth: "1px",
-      borderColor: "primary",
-      ":focus": {
-        outlineColor: "primary",
-        outlineWidth: "3px",
-        outlineStyle: "solid",
-        outlineOffset: "1px",
-        backgroundColor: "secondary",
-        color: "primary"
-      },
-      ":hover": {
-        backgroundColor: "primary",
-        color: "secondary"
-      },
-    },
+    
   },
   links: {
-    logo: {
-      color: "headerText",
-      textDecoration: "none",
-      ":hover": {
-        textDecoration: "none",
-        color: "headerText",
-      },
-      ":focus": {
-        outlineWidth: "3px",
-        outlineStyle: "solid",
-        outlineColor: "headerText",
-        color: "headerText",
-        outlineOffset: "8px",
-      },
-    },
     nav: {
       px: 2,
       py: 2,
       textTransform: "uppercase",
-      letterSpacing: "0.2em",
+      letterSpacing: "0.1em",
       color: "primary",
       fontSize: "3",
 
