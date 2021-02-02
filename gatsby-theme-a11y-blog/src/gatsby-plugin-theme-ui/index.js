@@ -129,11 +129,6 @@ export default {
       letterSpacing: "0.1em",
       color: "primary",
       fontSize: "3",
-
-      ":hover": {
-        textDecoration: "underline",
-        textUnderlineOffset: "4px"
-      },
       ":focus": {
         outlineWidth: "3px",
         outlineStyle: "solid",

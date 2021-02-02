@@ -8,7 +8,6 @@
 }
 
 a[aria-current] {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: underline overline dotted;
+  text-underline-offset: 0.4rem;
 }
-
