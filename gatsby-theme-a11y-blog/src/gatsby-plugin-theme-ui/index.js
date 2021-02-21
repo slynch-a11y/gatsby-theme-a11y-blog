@@ -14,17 +14,18 @@ export default {
   },
   colors: {
     text: "black", 
-    background: "#f5f6f8", 
-    primary: "#3d5a80", //dark blue link and button color
+    background: "#FDFBFD", 
+    primary: "#953787", //link and button color
 
     modes: {
       dark: {
         text: "#fff", 
-        background: "#293241", 
-        primary: "#98c1d9", //link and button color
+        background: "#252D3C", 
+        primary: "#ECCFEB", //link and button color 
         
       },
     },
+    
   },
   styles: {
     root: {
@@ -50,6 +51,7 @@ export default {
     },
     a: {
       color: "primary",
+      textUnderlineOffset: "0.25rem",
 
       ":hover": {
         textDecoration: "none",
@@ -122,6 +124,16 @@ export default {
     
   },
   links: {
+    logo: {
+      textDecoration: "none !important",
+      color: "primary",
+      ":focus": {
+        outlineWidth: "3px",
+        outlineStyle: "solid",
+        outlineColor: "primary",
+        color: "primary",
+      },
+    },
     nav: {
       px: 2,
       py: 2,

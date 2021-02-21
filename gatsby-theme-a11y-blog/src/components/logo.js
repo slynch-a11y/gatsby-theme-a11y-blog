@@ -1,15 +1,14 @@
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, NavLink } from "theme-ui";
 
 export function Logo(props) {
   const author = props.data.site.siteMetadata.author;
   const tagline = props.data.site.siteMetadata.tagline;
   return (
-    <div sx={{}}>
-     
-    
+    <div>
+    <NavLink variant="logo" as={Link} to="/">
         <span
           sx={{
             fontFamily: "Sacramento",
@@ -23,6 +22,7 @@ export function Logo(props) {
       <span sx={{ fontWeight: "200", fontSize: 3, whiteSpace: "nowrap" }}>{tagline}</span>
      </div>
      
+    </NavLink>
     </div>
   );
 }
