@@ -35,7 +35,7 @@ In your gatsby-config.js file, add your appropriate metadata. For example:
 
 ## Add Blog Content
 Add blog posts as markdown files in src/markdown/blog with the appropriate front matter. For example:
-
+```
 ---
 title: Third Blog Post
 date: '2020-05-05'
@@ -44,12 +44,13 @@ tags: blog, third
 featuredImage: "./images/leo.jpg"
 featuredImageAlt: "featured-image-alt-text"
 ---
-
+```
 ## Add Home Page "About Me" Content
 Include a home.md file in src/markdown with the appropriate front matter.  For example:
-
+```
 ---
 title: Home
 featuredImage: "./images/home.jpg"
 featuredImageAlt: "Two fancy cats. One is wearing a bowtie and the other is wearing a tie."
 ---
+```
