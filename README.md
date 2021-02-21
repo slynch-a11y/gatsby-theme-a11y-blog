@@ -54,3 +54,14 @@ featuredImage: "./images/home.jpg"
 featuredImageAlt: "Two fancy cats. One is wearing a bowtie and the other is wearing a tie."
 ---
 ```
+## Optional
+### Modify the 404 Page
+Include a 404.md file in src/markdown with the appropriate front matter.  For example:
+```
+---
+title: Page Not Found
+featuredImage: "./images/404.jpg"
+featuredImageAlt: "page not found"
+text: "Oops! Looks like the page you are looking for does not exist."
+---
+```
