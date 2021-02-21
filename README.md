@@ -16,9 +16,11 @@ Starting with a current Gatsby site, install the theme via npm:
 ```npm install @slynch-a11y/gatsby-theme-a11y-blog```
 
 ## Customize your Site
-In your gatsby-config.js file, add your appropriate metadata. For example:
+In your gatsby-config.js file, add the theme and appropriate metadata. For example:
 
-```{
+```
+module.exports = {
+    siteMetadata: {
       title: "Sarah E. Lynch",
       author: "Sarah E. Lynch",
       tagline: "accessibility engineer",
@@ -30,7 +32,21 @@ In your gatsby-config.js file, add your appropriate metadata. For example:
         linkedIn: "sarah-lynch-7257028",
         email: "sarah@alum.rpi.edu",
         github: "slynch-a11y",
-      }
+      },
+    },
+    plugins: [
+      {
+        resolve: "@slynch-a11y/gatsby-theme-a11y-blog",
+        options: {
+          markdownPath: "src/markdown",
+        },
+      },
+    ]
+}
+```
+## Start Developing
+```
+gatsby develop
 ```
 
 ## Add Blog Content
