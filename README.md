@@ -31,4 +31,4 @@ In your gatsby-config.js file, add your appropriate metadata. For example:
         email: "sarah@alum.rpi.edu",
         github: "slynch-a11y",
       }
-}```
+
