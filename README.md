@@ -18,7 +18,7 @@ Starting with a current Gatsby site, install the theme via npm:
 ## Customize your Site
 In your gatsby-config.js file, add your appropriate metadata. For example:
 
-{
+```{
       title: "Sarah E. Lynch",
       author: "Sarah E. Lynch",
       tagline: "accessibility engineer",
@@ -31,4 +31,4 @@ In your gatsby-config.js file, add your appropriate metadata. For example:
         email: "sarah@alum.rpi.edu",
         github: "slynch-a11y",
       }
-}
+}```
