@@ -7,15 +7,17 @@ This theme was created with accessibility in mind.
 ## Features
 * Accessible
 * Site Search
-* Theme UI is used
+* Theme UI (utilizing light and dark modes)
 * Markdown files for blog posts
 
 ## How to Install
 Starting with a current Gatsby site, install the theme via npm:
+
 ```npm install @slynch-a11y/gatsby-theme-a11y-blog```
 
 ## Customize your Site
 In your gatsby-config.js file, add your appropriate metadata. For example:
+
 ```siteMetadata: {
       title: "Sarah E. Lynch",
       author: "Sarah E. Lynch",
