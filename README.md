@@ -52,6 +52,7 @@ Include a home.md file in src/markdown with the appropriate front matter.  For e
 title: Home
 featuredImage: "./images/home.jpg"
 featuredImageAlt: "Two fancy cats. One is wearing a bowtie and the other is wearing a tie."
+featuredImageCaption: ""
 ---
 ```
 ## Optional
