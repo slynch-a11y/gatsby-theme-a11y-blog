@@ -14,8 +14,8 @@ export default {
   },
   colors: {
     text: "black", 
-    background: "#FDFBFD", 
-    primary: "#953787", //link and button color
+    background: "#FFFFFF",
+    primary: "#730071", //link and button color
 
     modes: {
       dark: {
