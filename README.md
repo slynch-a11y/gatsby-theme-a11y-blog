@@ -8,7 +8,19 @@ This theme was created with accessibility in mind.
 * Accessible
 * Site Search
 * Theme UI (utilizing light and dark modes)
-* Markdown files for blog posts
+* MDX for using JSX in blog posts
+
+## Gatsby Plugins Used
+* gatsby-source-filesystem
+* gatsby-plugin-mdx
+* gatsby-transformer-remark
+* gatsby-plugin-sharp
+* gatsby-remark-images
+* gatsby-transformer-sharp
+* gatsby-plugin-webfonts
+* gatsby-plugin-theme-ui
+* gatsby-plugin-typography
+* gatsby-plugin-react-helmet
 
 ## How to Install
 Starting with a current Gatsby site, install the theme via npm:
