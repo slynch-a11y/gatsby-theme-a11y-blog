@@ -36,6 +36,9 @@ export default {
       color: "text",
       fontSize: 3
     },
+    inlineCode: {
+      fontSize: "1.1rem",
+    },
     h1: {
       fontWeight: "heading",
       lineHeight: "heading",
