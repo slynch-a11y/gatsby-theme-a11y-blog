@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/slynch-a11y/gatsby-theme-a11y-blog"
   },
-  "version": "0.0.17",
+  "version": "0.0.18",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@mdx-js/mdx": "^1.6.22",
+    "@theme-ui/prism": "^0.3.5",
     "eslint": "^7.5.0",
     "focus-visible": "^5.1.0",
     "gatsby-cli": "^2.18.0",

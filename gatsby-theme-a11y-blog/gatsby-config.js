@@ -35,7 +35,7 @@ module.exports = {
         ],
       },
     },
-    "gatsby-transformer-remark",
+   `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

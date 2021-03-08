@@ -15,9 +15,16 @@ export default (SearchResults) => {
           <ul sx={{ listStyleType: "none" }}>
             {state.searchResults.map((page) => (
               <li key={page.id} sx={{ marginLeft: "-28px" }}>
-                <Styled.a as={Link} to={page.slug}>
+               {
+                page.slug == "/home/" ?
+                   <Styled.a as={Link} to="/">
+                   {page.title}
+                 </Styled.a>
+                :
+                  <Styled.a as={Link} to={page.slug}>
                   {page.title}
                 </Styled.a>
+               }
               </li>
             ))}
           </ul>
