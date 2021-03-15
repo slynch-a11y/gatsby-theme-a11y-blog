@@ -15,6 +15,12 @@ export function Logo(props) {
             fontSize: 6,
             fontWeight: "200",
             whiteSpace: "nowrap",
+            "@media screen and (max-width: 65rem)": {
+              marginRight: "1rem",
+            },
+            "@media screen and (max-width: 42.5rem)": {
+              marginRight: "0",
+            },
           }}
         >{author}</span>
         <br />

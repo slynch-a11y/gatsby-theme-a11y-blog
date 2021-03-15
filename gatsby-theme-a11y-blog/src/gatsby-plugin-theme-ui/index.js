@@ -39,6 +39,9 @@ export default {
     inlineCode: {
       fontSize: "1.1rem",
     },
+    code: {
+      fontSize: "1.1rem",
+    },
     h1: {
       fontWeight: "heading",
       lineHeight: "heading",

@@ -6,12 +6,14 @@ import { css } from "@emotion/core";
 import Toggle from "./toggle";
 
 export default (Menu) => {
+  
   return (
     <div
       css={css`
         margin-bottom: -25px;
         margin-left: -30px;
         margin-top: 5px;
+        white-space: nowrap;
       `}
     >
       <Flex>

@@ -11,3 +11,4 @@ export const wrapRootElement = ({ element }) => {
 wrapRootElement.propTypes = {
   element: PropTypes.object.isRequired,
 };
+

@@ -35,7 +35,14 @@ export function Search(props) {
 
   return (
     <Box as="form" class="search" id="js-search" role="search">
-      <div sx={{ whiteSpace: "nowrap", marginTop: "5px" }}>
+      <div sx={{ whiteSpace: "nowrap", marginTop: "5px" ,
+      "@media screen and (max-width: 50rem)": {
+                marginTop: "1rem"
+              },
+              "@media screen and (max-width: 44.5rem)": {
+                marginTop: "0.5rem"
+              },
+              }}>
         <Input
           sx={{
             
