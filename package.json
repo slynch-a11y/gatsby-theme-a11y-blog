@@ -4,17 +4,6 @@
     "gatsby-theme-a11y-blog",
     "demo"
   ],
-  "devDependencies": {
-    "eslint": "^7.5.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "gatsby-cli": "2.12.54"
   }

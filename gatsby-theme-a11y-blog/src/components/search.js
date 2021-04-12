@@ -1,17 +1,17 @@
-import React, { useEffect, useContext } from "react";
-import { graphql, StaticQuery, navigate } from "gatsby";
-import { Index } from "elasticlunr";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Input, Button, Box } from "theme-ui";
+import React, {useEffect, useContext} from 'react';
+import {graphql, StaticQuery, navigate} from 'gatsby';
+import {Index} from 'elasticlunr';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {Input, Button, Box} from 'theme-ui';
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { GlobalDispatchContext } from "../context/GlobalContextProvider";
+import {jsx} from 'theme-ui';
+import {GlobalDispatchContext} from '../context/GlobalContextProvider';
 
 export function Search(props) {
   const dispatch = useContext(GlobalDispatchContext);
 
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = React.useState('');
   const [searchResults, setSearchResults] = React.useState([]);
 
   const handleChange = (event) => {
@@ -24,31 +24,26 @@ export function Search(props) {
     };
     const searchrs = getOrCreateIndex();
 
-    const results = searchrs
-      .search(searchTerm, { expand: true })
-      .map(({ ref }) => {
-        return searchrs.documentStore.getDoc(ref);
-      });
+    const results = searchrs.search(searchTerm, {expand: true}).map(({ref}) => {
+      return searchrs.documentStore.getDoc(ref);
+    });
 
     setSearchResults(results);
   }, [searchTerm, props]);
 
   return (
-    <Box as="form" class="search" id="js-search" role="search">
-      <div sx={{ whiteSpace: "nowrap", marginTop: "5px" ,
-      "@media screen and (max-width: 50rem)": {
-                marginTop: "1rem"
-              },
-              "@media screen and (max-width: 44.5rem)": {
-                marginTop: "0.5rem"
-              },
-              }}>
+    <Box as="form" role="search">
+      <div
+        sx={{
+          whiteSpace: 'nowrap',
+          marginTop: '1.2rem',
+        }}
+      >
         <Input
           sx={{
-            
-            display: "inline",
-            width: "7rem",
-            marginRight: "5px",
+            display: 'inline',
+            width: '7rem',
+            marginRight: '5px',
           }}
           type="text"
           id="search"
@@ -58,16 +53,15 @@ export function Search(props) {
           onChange={handleChange}
         />
         <Button
-          // variant="search"
           type="submit"
           onClick={(event) => {
             event.preventDefault();
-            dispatch({ type: "SHOW_SEARCH_RESULTS", payload: searchResults });
-            dispatch({ type: "SHOW_SEARCH_TERM", payload: searchTerm });
-            navigate("/search");
+            dispatch({type: 'SHOW_SEARCH_RESULTS', payload: searchResults});
+            dispatch({type: 'SHOW_SEARCH_TERM', payload: searchTerm});
+            navigate('/search');
           }}
         >
-         <FontAwesomeIcon icon={faSearch} aria-hidden="true" /> Search
+          <FontAwesomeIcon icon={faSearch} aria-hidden="true" /> Search
         </Button>
       </div>
     </Box>

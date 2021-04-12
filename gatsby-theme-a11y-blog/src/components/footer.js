@@ -1,15 +1,15 @@
-import { StaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {StaticQuery, graphql} from 'gatsby';
+import PropTypes from 'prop-types';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faTwitter,
   faLinkedinIn,
   faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Styled, NavLink, Flex } from "theme-ui";
+import {jsx} from 'theme-ui';
+import {Styled, NavLink, Flex} from 'theme-ui';
 
 export function Footer(props) {
   const {
@@ -20,30 +20,30 @@ export function Footer(props) {
   } = props.data.site.siteMetadata.social;
 
   return (
-    <footer sx={{ marginTop: "200px" }}>
+    <footer sx={{marginTop: '200px'}}>
       <div
         sx={{
-          mx: "auto",
-          textAlign: "center",
+          mx: 'auto',
+          textAlign: 'center',
         }}
       >
-        <Styled.h2 sx={{ marginBottom: "2px" }}>Connect with me!</Styled.h2>
+        <Styled.h2 sx={{marginBottom: '2px'}}>Connect with me!</Styled.h2>
 
         <Flex
           as="nav"
           aria-label="social"
           sx={{
-            alignItems: "center",
-            justifyContent: "center",
-            marginLeft: "-40px",
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginLeft: '-40px',
           }}
         >
-          <ul sx={{ listStyleType: "none" }}>
+          <ul sx={{listStyleType: 'none'}}>
             {twitter.length ? (
-              <li sx={{ display: "inline-block" }}>
+              <li sx={{display: 'inline-block'}}>
                 <NavLink
                   variant="socialNav"
-                  href={"https://twitter.com/" + twitter}
+                  href={'https://twitter.com/' + twitter}
                   aria-label="Twitter"
                   title="Twitter"
                 >
@@ -52,10 +52,10 @@ export function Footer(props) {
               </li>
             ) : null}
             {linkedIn.length ? (
-              <li sx={{ display: "inline-block" }}>
+              <li sx={{display: 'inline-block'}}>
                 <NavLink
                   variant="socialNav"
-                  href={"https://www.linkedin.com/in/" + linkedIn}
+                  href={'https://www.linkedin.com/in/' + linkedIn}
                   aria-label="LinkedIn"
                   title="LinkedIn"
                 >
@@ -64,10 +64,10 @@ export function Footer(props) {
               </li>
             ) : null}
             {github.length ? (
-              <li sx={{ display: "inline-block" }}>
+              <li sx={{display: 'inline-block'}}>
                 <NavLink
                   variant="socialNav"
-                  href={"https://www.github.com/" + github}
+                  href={'https://www.github.com/' + github}
                   aria-label="GitHub"
                   title="GitHub"
                 >
@@ -76,10 +76,10 @@ export function Footer(props) {
               </li>
             ) : null}
             {email.length ? (
-              <li sx={{ display: "inline-block" }}>
+              <li sx={{display: 'inline-block'}}>
                 <NavLink
                   variant="socialNav"
-                  href={"mailto:" + email}
+                  href={'mailto:' + email}
                   aria-label="Email"
                   title="Email"
                 >
@@ -90,7 +90,7 @@ export function Footer(props) {
           </ul>
         </Flex>
 
-        <div sx={{ marginBottom: "30px" }}>
+        <div sx={{marginBottom: '30px'}}>
           © {new Date().getFullYear()} Built with
           {` `}
           <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>

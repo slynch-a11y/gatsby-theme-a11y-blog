@@ -5,14 +5,15 @@
     "type": "git",
     "url": "https://github.com/slynch-a11y/gatsby-theme-a11y-blog"
   },
-  "version": "0.0.20",
+  "version": "0.0.21",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "pretty": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\""
   },
   "peerDependencies": {
     "gatsby": "^2.23.20",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "babel-jest": "^26.1.0",
     "babel-preset-gatsby": "^0.11.0",
+    "eslint-config-react-app": "^5.2.1",
     "gatsby": "^2.23.20",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.1.0",
@@ -31,6 +33,9 @@
     "react-test-renderer": "^17.0.1"
   },
   "dependencies": {
+    "@fontsource/poppins": "^4.2.2",
+    "@fontsource/roboto": "^4.2.2",
+    "@fontsource/sacramento": "^4.2.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -38,7 +43,6 @@
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "@mdx-js/mdx": "^1.6.22",
     "@theme-ui/prism": "^0.3.5",
-    "eslint": "^7.5.0",
     "focus-visible": "^5.1.0",
     "gatsby-cli": "^2.18.0",
     "gatsby-image": "^2.10.0",
@@ -46,8 +50,6 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.13.1",
     "gatsby-plugin-theme-ui": "^0.3.5",
-    "gatsby-plugin-typography": "^2.5.10",
-    "gatsby-plugin-webfonts": "^1.1.4",
     "gatsby-remark-images": "^4.0.0",
     "gatsby-source-filesystem": "^2.3.18",
     "gatsby-transformer-remark": "^2.15.0",

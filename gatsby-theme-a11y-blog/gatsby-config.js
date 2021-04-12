@@ -1,30 +1,30 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby A11y-Ready Theme",
-    author: "Sarah E. Lynch",
-    tagline: "accessibility engineer",
-    url: "",
-    description: "An accessibility-ready Gatsby theme.",
-    image: "",
+    title: 'Gatsby A11y-Ready Theme',
+    author: 'Sarah E. Lynch',
+    tagline: 'accessibility engineer',
+    url: '',
+    description: 'An accessibility-ready Gatsby theme.',
+    image: '',
     social: {
-      twitter: "",
-      linkedIn: "",
-      email: "",
-      github: "",
+      twitter: '',
+      linkedIn: '',
+      email: '',
+      github: '',
     },
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: "src/markdown",
-        name: "markdown",
+        path: 'src/markdown',
+        name: 'markdown',
       },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -35,7 +35,7 @@ module.exports = {
         ],
       },
     },
-   `gatsby-transformer-remark`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -46,32 +46,7 @@ module.exports = {
     },
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Roboto",
-              variants: ["300", "400", "500"],
-            },
-            {
-              family: `Poppins`,
-            },
-            {
-              family: `Sacramento`,
-            },
-          ],
-        },
-      },
-    },
     `gatsby-plugin-theme-ui`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,

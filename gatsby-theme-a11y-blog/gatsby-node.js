@@ -1,12 +1,12 @@
 const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const fs = require("fs");
+const {createFilePath} = require(`gatsby-source-filesystem`);
+const fs = require('fs');
 
 //make sure the src directory exists
 //if the src/markdown directory does not exist, it will create it
-exports.onPreBootstrap = ({ reporter }, options) => {
-  const contentPath = "src/markdown";
-  const srcFolder = "src";
+exports.onPreBootstrap = ({reporter}, options) => {
+  const contentPath = 'src/markdown';
+  const srcFolder = 'src';
   if (!fs.existsSync(srcFolder)) {
     reporter.info(`creating the ${srcFolder} directory`);
     fs.mkdirSync(srcFolder);
@@ -18,8 +18,8 @@ exports.onPreBootstrap = ({ reporter }, options) => {
 };
 
 //create a slug field
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
+exports.onCreateNode = ({node, getNode, actions}) => {
+  const {createNodeField} = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({
       node,
@@ -33,21 +33,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }, options) => {
-  const { createPage } = actions;
+exports.createPages = async ({graphql, actions}, options) => {
+  const {createPage} = actions;
 
-  const basePath = "/";
+  const basePath = '/';
 
   //query for blogs
   const blogResult = await graphql(
     `
       query {
         allMdx(
-          sort: { fields: frontmatter___date, order: DESC }
-          filter: {
-            parent: {}
-            fileAbsolutePath: { regex: "/src/markdown/blog/" }
-          }
+          sort: {fields: frontmatter___date, order: DESC}
+          filter: {parent: {}, fileAbsolutePath: {regex: "/src/markdown/blog/"}}
         ) {
           edges {
             node {
@@ -94,7 +91,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
     throw blogResult.errors;
   }
 
-  const blogPath = "blog";
+  const blogPath = 'blog';
   const blogPost = require.resolve(`./src/pages/blog-post.js`);
   const blogPosts = blogResult.data.allMdx.edges;
 
@@ -144,73 +141,7 @@ exports.createPages = async ({ graphql, actions }, options) => {
 
   //create search page
   createPage({
-    path: "search",
+    path: 'search',
     component: require.resolve(`./src/pages/search-page.js`),
-  });
-
-  //query for portfolio results
-  const result = await graphql(
-    `
-      query {
-        allMdx(
-          sort: { fields: frontmatter___date, order: DESC }
-          filter: {
-            parent: {}
-            fileAbsolutePath: { regex: "/src/markdown/portfolio/" }
-          }
-        ) {
-          edges {
-            node {
-              slug
-              body
-              frontmatter {
-                title
-                tags
-                date(formatString: "MMMM DD, YYYY")
-                description
-                image {
-                  childImageSharp {
-                    fixed(height: 150, width: 250, cropFocus: CENTER) {
-                      base64
-                      aspectRatio
-                      srcWebp
-                      srcSetWebp
-                      src
-                      srcSet
-                      width
-                      height
-                    }
-                    fluid(maxWidth: 300) {
-                      src
-                      srcSet
-                      srcSetWebp
-                      base64
-                      aspectRatio
-                    }
-                  }
-                }
-              }
-              excerpt(pruneLength: 150)
-            }
-          }
-        }
-      }
-    `
-  );
-
-  if (result.errors) {
-    throw result.errors;
-  }
-
-  const portfolioPosts = result.data.allMdx.edges;
-  const portfolioPath = "portfolio";
-
-  //create portfolio listing page
-  createPage({
-    path: portfolioPath,
-    component: require.resolve(`./src/pages/portfolio-listing.js`),
-    context: {
-      portfolio: portfolioPosts,
-    },
   });
 };

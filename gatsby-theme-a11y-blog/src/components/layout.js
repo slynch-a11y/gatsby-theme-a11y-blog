@@ -1,24 +1,22 @@
-import React from "react";
-import Header from "./header";
-import Footer from "./footer";
+import React from 'react';
+import Header from './header';
+import Footer from './footer';
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Container, Styled } from "theme-ui";
-import { MDXProvider } from "@mdx-js/react"
-import { Link } from "gatsby"
+import {jsx} from 'theme-ui';
+import {Container} from 'theme-ui';
 
-const shortcodes = { Link, jsx, Styled }
-
-export default function Layout({ children }) {
+export default function Layout({children}) {
   return (
     <>
-      <Header />
-      <Container>
-        <main id="main" tabIndex="-1" sx={{ marginBottom: "50px" }}>
-          <div sx={{ marginTop: "50px" }}>
-            <div sx={{ marginBottom: "30px" }} />
+      <Container
+        sx={{margin: 'auto', width: ['80%', '80%', '80%', '80%', '60%']}}
+      >
+        <Header />
+        <main id="main" tabIndex="-1" sx={{marginBottom: '50px'}}>
+          <div sx={{marginTop: '50px'}}>
+            <div sx={{marginBottom: '30px'}}></div>
 
-           {children}
+            {children}
           </div>
         </main>
         <Footer />

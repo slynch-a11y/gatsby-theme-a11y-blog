@@ -1,9 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import {Helmet} from 'react-helmet';
+import PropTypes from 'prop-types';
+import {StaticQuery, graphql} from 'gatsby';
 
-const SEO = ({ lang, title, description, image, pathname, article }) => (
+const SEO = ({lang, title, description, image, pathname, article}) => (
   <StaticQuery
     query={query}
     render={({
@@ -18,10 +18,10 @@ const SEO = ({ lang, title, description, image, pathname, article }) => (
       },
     }) => {
       const seo = {
-        title: title + " | " + defaultTitle,
+        title: title + ' | ' + defaultTitle,
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
-        url: `${siteUrl}${pathname || "/"}`,
+        url: `${siteUrl}${pathname || '/'}`,
       };
 
       return (
@@ -33,7 +33,7 @@ const SEO = ({ lang, title, description, image, pathname, article }) => (
         >
           <meta name="description" content={seo.description} />
           <meta name="image" content={seo.image} />
-          
+
           {seo.url && <meta property="og:url" content={seo.url} />}
           {(article ? true : null) && (
             <meta property="og:type" content="article" />

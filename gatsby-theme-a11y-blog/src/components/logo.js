@@ -1,34 +1,37 @@
-import { StaticQuery, graphql, Link } from "gatsby";
-import PropTypes from "prop-types";
+import {StaticQuery, graphql, Link} from 'gatsby';
+import PropTypes from 'prop-types';
 /** @jsx jsx */
-import { jsx, NavLink } from "theme-ui";
+import {jsx, NavLink} from 'theme-ui';
 
 export function Logo(props) {
   const author = props.data.site.siteMetadata.author;
   const tagline = props.data.site.siteMetadata.tagline;
   return (
     <div>
-    <NavLink variant="logo" as={Link} to="/">
+      <NavLink variant="logo" as={Link} to="/">
         <span
           sx={{
-            fontFamily: "Sacramento",
+            fontFamily: 'Sacramento',
             fontSize: 6,
-            fontWeight: "200",
-            whiteSpace: "nowrap",
-            "@media screen and (max-width: 65rem)": {
-              marginRight: "1rem",
+            fontWeight: '200',
+            whiteSpace: 'nowrap',
+            '@media screen and (max-width: 65rem)': {
+              marginRight: '1rem',
             },
-            "@media screen and (max-width: 42.5rem)": {
-              marginRight: "0",
+            '@media screen and (max-width: 42.5rem)': {
+              marginRight: '0',
             },
           }}
-        >{author}</span>
+        >
+          {author}
+        </span>
         <br />
-        <div sx={{ display: "flex", justifyContent: "center" }}>
-      <span sx={{ fontWeight: "200", fontSize: 3, whiteSpace: "nowrap" }}>{tagline}</span>
-     </div>
-     
-    </NavLink>
+        <div sx={{display: 'flex', justifyContent: 'center'}}>
+          <span sx={{fontWeight: '200', fontSize: 3, whiteSpace: 'nowrap'}}>
+            {tagline}
+          </span>
+        </div>
+      </NavLink>
     </div>
   );
 }

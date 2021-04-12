@@ -17,9 +17,7 @@ This theme was created with accessibility in mind.
 * gatsby-plugin-sharp
 * gatsby-remark-images
 * gatsby-transformer-sharp
-* gatsby-plugin-webfonts
 * gatsby-plugin-theme-ui
-* gatsby-plugin-typography
 * gatsby-plugin-react-helmet
 
 ## How to Install

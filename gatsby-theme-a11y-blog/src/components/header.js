@@ -1,21 +1,16 @@
-import React from "react";
-import Search from "./search";
+import React from 'react';
+import Search from './search';
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Styled } from "theme-ui";
-import { css } from "@emotion/core";
-import Menu from "./menu";
-import Logo from "./logo";
+import {jsx} from 'theme-ui';
+import {Styled} from 'theme-ui';
+import {css} from '@emotion/core';
+import Menu from './menu';
+import Logo from './logo';
 
 export default (Header) => {
   return (
     <header>
-      <div
-        css={css`
-          margin: auto;
-          width: 25%;
-        `}
-      >
+      <div>
         <Styled.a
           css={css`
             top: auto;
@@ -40,17 +35,17 @@ export default (Header) => {
         </Styled.a>
       </div>
       <div>
-        <div sx={{ width: "85%", margin: "auto" }}>
+        <div>
           <div
             sx={{
               p: 3,
 
-              display: "flex",
-              justifyContent: "space-between",
+              display: 'flex',
+              justifyContent: 'space-between',
 
-              "@media screen and (max-width: 50rem)": {
-                flexWrap: "wrap",
-                justifyContent: "center",
+              '@media screen and (max-width: 60rem)': {
+                flexWrap: 'wrap',
+                justifyContent: 'center',
               },
             }}
           >

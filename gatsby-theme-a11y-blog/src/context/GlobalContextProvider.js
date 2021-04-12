@@ -1,32 +1,32 @@
-import React from "react";
+import React from 'react';
 export const GlobalStateContext = React.createContext();
 export const GlobalDispatchContext = React.createContext();
 
 const initialState = {
-  searchTerm: "",
+  searchTerm: '',
   searchResults: [],
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case "SHOW_SEARCH_RESULTS": {
+    case 'SHOW_SEARCH_RESULTS': {
       return {
         ...state,
         searchResults: action.payload,
       };
     }
-    case "SHOW_SEARCH_TERM": {
+    case 'SHOW_SEARCH_TERM': {
       return {
         ...state,
         searchTerm: action.payload,
       };
     }
     default:
-      throw new Error("Bad Action Type");
+      throw new Error('Bad Action Type');
   }
 }
 
-const GlobalContextProvider = ({ children }) => {
+const GlobalContextProvider = ({children}) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   return (
     <GlobalStateContext.Provider value={state}>
