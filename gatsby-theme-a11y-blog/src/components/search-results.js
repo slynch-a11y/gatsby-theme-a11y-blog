@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 /** @jsx jsx */
 import {jsx} from 'theme-ui';
-import {Styled} from 'theme-ui';
+import {Themed} from 'theme-ui';
 import {Link} from 'gatsby';
 import {GlobalStateContext} from '../context/GlobalContextProvider';
 
@@ -14,15 +14,15 @@ export default (SearchResults) => {
         <div sx={{marginTop: '20px'}}>
           <ul sx={{listStyleType: 'none'}}>
             {state.searchResults.map((page) => (
-              <li key={page.id} sx={{marginLeft: '-28px'}}>
+              <li key={page.id} sx={{marginLeft: '-28px', marginTop: '2rem'}}>
                 {page.slug === '/home/' ? (
-                  <Styled.a as={Link} to="/">
+                  <Themed.a as={Link} to="/">
                     {page.title}
-                  </Styled.a>
+                  </Themed.a>
                 ) : (
-                  <Styled.a as={Link} to={page.slug}>
+                  <Themed.a as={Link} to={page.slug}>
                     {page.title}
-                  </Styled.a>
+                  </Themed.a>
                 )}
               </li>
             ))}
