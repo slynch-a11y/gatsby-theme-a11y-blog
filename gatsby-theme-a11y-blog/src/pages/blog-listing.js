@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import {Styled} from 'theme-ui';
+import {Themed, jsx} from 'theme-ui';
+/** @jsx jsx */
 
 export default function BlogListing(props) {
   const blogListings = props.pageContext.blogs;
@@ -10,17 +11,18 @@ export default function BlogListing(props) {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Styled.h1>Blog</Styled.h1>
+      <Themed.h1>Blog</Themed.h1>
       {blogListings
         ? blogListings.map((blog, index) => {
             return (
               <div key={index}>
-                <Styled.h2>
-                  <Styled.a as={Link} to={'/' + blog.node.slug}>
+                <Themed.h2>
+                  <Themed.a as={Link} to={'/' + blog.node.slug}>
                     {blog.node.frontmatter.title}
-                  </Styled.a>
-                </Styled.h2>
-                <p>{blog.node.excerpt}</p>
+                  </Themed.a>
+                </Themed.h2>
+                <div class="date">{blog.node.frontmatter.date}</div>
+                <p sx={{marginBottom: '2rem'}}>{blog.node.excerpt}</p>
               </div>
             );
           })

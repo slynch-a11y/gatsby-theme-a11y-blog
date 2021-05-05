@@ -1,26 +1,29 @@
 import React from 'react';
 import {graphql} from 'gatsby';
-import Img from 'gatsby-image';
-import {Styled} from 'theme-ui';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import {Themed} from 'theme-ui';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import formatDate from '../date-formatter';
 
 export default function BlogPost({data: {mdx}}) {
+  const featuredImage = getImage(mdx.frontmatter.featuredImage);
+
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-      <Styled.h1>{mdx.frontmatter.title}</Styled.h1>
-      <p>{mdx.frontmatter.date}</p>
-      {mdx.frontmatter.featuredImage ? (
-        <Img
-          fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
+      <Themed.h1>{mdx.frontmatter.title}</Themed.h1>
+      {mdx.frontmatter.date ? (
+        <p class="date">{formatDate(mdx.frontmatter.date)}</p>
+      ) : null}
+      {featuredImage ? (
+        <GatsbyImage
+          image={featuredImage}
           alt={mdx.frontmatter.featuredImageAlt}
         />
       ) : null}
       <MDXRenderer>{mdx.body}</MDXRenderer>
-
-      <hr />
     </Layout>
   );
 }
@@ -34,17 +37,12 @@ export const pageQuery = graphql`
 
       frontmatter {
         title
+        date
         featuredImageAlt
         featuredImageCaption
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              src
-              srcSet
-              srcSetWebp
-              base64
-              aspectRatio
-            }
+            gatsbyImageData(width: 800)
           }
         }
       }

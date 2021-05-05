@@ -11,3 +11,7 @@ a[aria-current] {
   text-decoration: underline overline dotted;
   text-underline-offset: 0.4rem;
 }
+
+.date {
+  font-size: 0.75rem;
+}

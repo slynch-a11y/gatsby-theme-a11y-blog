@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ['40rem', '52rem', '64rem', '70rem', '80rem'],
+  breakpoints: ['57rem', '70rem', '75rem', '80rem'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: '"Poppins", Tahoma, Geneva, sans-serif',
@@ -76,7 +76,7 @@ export default {
       padding: 2,
       backgroundColor: 'white',
       borderRadius: 2,
-      boxShadow: '0 0 8px black',
+      maxWidth: '450px',
     },
   },
   forms: {

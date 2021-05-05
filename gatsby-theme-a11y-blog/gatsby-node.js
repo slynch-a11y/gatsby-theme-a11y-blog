@@ -21,10 +21,7 @@ exports.onPreBootstrap = ({reporter}, options) => {
 exports.onCreateNode = ({node, getNode, actions}) => {
   const {createNodeField} = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({
-      node,
-      getNode,
-    });
+    const slug = createFilePath({node, getNode, basePath: `pages`});
     createNodeField({
       node,
       name: `slug`,
@@ -56,30 +53,9 @@ exports.createPages = async ({graphql, actions}, options) => {
                 tags
                 date(formatString: "MMMM DD, YYYY")
                 description
-                featuredImage {
-                  childImageSharp {
-                    fixed(height: 150, width: 200, cropFocus: CENTER) {
-                      base64
-                      aspectRatio
-                      srcWebp
-                      srcSetWebp
-                      src
-                      srcSet
-                      width
-                      height
-                    }
-                    fluid(maxWidth: 800) {
-                      src
-                      srcSet
-                      srcSetWebp
-                      base64
-                      aspectRatio
-                    }
-                  }
-                }
                 featuredImageAlt
               }
-              excerpt(pruneLength: 150)
+              excerpt(pruneLength: 200)
             }
           }
         }
@@ -115,7 +91,7 @@ exports.createPages = async ({graphql, actions}, options) => {
         previous,
         next,
         excerpt: post.node.excerpt,
-        featuredImage: post.node.frontmatter.featuredImage,
+        // featuredImage: post.node.frontmatter.featuredImage,
         featuredImageAlt: post.node.frontmatter.featuredImageAlt,
       },
     });
