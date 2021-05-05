@@ -2,8 +2,7 @@ import React from 'react';
 import Search from './search';
 /** @jsx jsx */
 import {jsx} from 'theme-ui';
-import {Styled} from 'theme-ui';
-import {css} from '@emotion/core';
+import {Themed} from 'theme-ui';
 import Menu from './menu';
 import Logo from './logo';
 
@@ -11,28 +10,28 @@ export default (Header) => {
   return (
     <header>
       <div>
-        <Styled.a
-          css={css`
-            top: auto;
-            clip: rect(0, 0, 0, 0);
-            overflow: hidden;
-            position: absolute;
-            &:focus {
-              clip: auto;
-              position: relative;
-              height: auto;
-              overflow: visible;
-              padding: 10px;
-              margin: 10px;
-              display: block;
-              text-decoration: none;
-              text-align: center;
-            }
-          `}
+        <Themed.a
+          sx={{
+            top: 'auto',
+            clip: 'rect(0, 0, 0, 0)',
+            overflow: 'hidden',
+            position: 'absolute',
+            ':focus': {
+              clip: 'auto',
+              position: 'relative',
+              height: 'auto',
+              overflow: 'visible',
+              padding: '10px',
+              margin: '10px',
+              display: 'block',
+              textDecoration: 'none',
+              textAlign: 'center',
+            },
+          }}
           href="#main"
         >
           Skip to Main Content
-        </Styled.a>
+        </Themed.a>
       </div>
       <div>
         <div>

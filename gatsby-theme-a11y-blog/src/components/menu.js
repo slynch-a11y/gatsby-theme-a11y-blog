@@ -2,17 +2,16 @@ import {Link} from 'gatsby';
 import {NavLink, Flex} from 'theme-ui';
 /** @jsx jsx */
 import {jsx} from 'theme-ui';
-import {css} from '@emotion/core';
 import Toggle from './toggle';
 
 export default (Menu) => {
   return (
     <div
-      css={css`
-        margin-bottom: -20px;
-        margin-left: -30px;
-        white-space: nowrap;
-      `}
+      sx={{
+        marginBottom: '-20px',
+        marginLeft: '-30px',
+        whiteSpace: 'nowrap',
+      }}
     >
       <Flex>
         <nav aria-label="primary">
