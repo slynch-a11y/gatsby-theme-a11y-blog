@@ -24,7 +24,7 @@ export default function HomePage(props) {
           <MDXRenderer>{props.data.allMdx.nodes[0].body}</MDXRenderer>
         </div>
         <div>
-          <Card sx={{marginTop: ['10px', '100px', '10px', '100px']}}>
+          <Card sx={{marginTop: ['10px', '100px', '100px', '100px']}}>
             {featuredImage ? (
               <GatsbyImage image={featuredImage} alt={featuredImageAlt} />
             ) : null}

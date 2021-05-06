@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ['57rem', '70rem', '75rem', '80rem'],
+  breakpoints: ['51rem', '57rem', '75rem', '80rem'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: '"Poppins", Tahoma, Geneva, sans-serif',

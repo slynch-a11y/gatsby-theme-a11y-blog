@@ -15,6 +15,7 @@ This theme was created with accessibility in mind.
 * gatsby-plugin-mdx
 * gatsby-transformer-remark
 * gatsby-plugin-sharp
+* gatsby-plugin-images
 * gatsby-remark-images
 * gatsby-transformer-sharp
 * gatsby-plugin-theme-ui

@@ -10,8 +10,8 @@
     },
     "dependencies": {
         "@slynch-a11y/gatsby-theme-a11y-blog": "*",
-        "gatsby": "^2.23.20",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1"
+        "gatsby": "^3.4.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     }
 }

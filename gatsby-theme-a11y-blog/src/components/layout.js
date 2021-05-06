@@ -8,7 +8,7 @@ import {Container} from 'theme-ui';
 export default function Layout({children}) {
   return (
     <>
-      <Container sx={{margin: 'auto', width: ['90%', '90%', '60%']}}>
+      <Container sx={{margin: 'auto', width: ['90%', '90%', '80%', '60%']}}>
         <Header />
         <main id="main" tabIndex="-1" sx={{marginBottom: '50px'}}>
           <div sx={{marginTop: '50px'}}>
