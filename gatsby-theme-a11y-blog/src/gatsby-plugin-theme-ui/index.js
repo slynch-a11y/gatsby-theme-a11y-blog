@@ -26,7 +26,7 @@ export default {
   },
   styles: {
     root: {
-      lineHeight: 'body',
+      lineHeight: '1.7rem',
       fontWeight: 'body',
       bg: 'background',
       color: 'text',
@@ -50,14 +50,16 @@ export default {
     h2: {
       fontFamily: 'heading',
       fontSize: 4,
+      marginBottom: 2,
     },
     h3: {
       fontFamily: 'heading',
       fontSize: 3,
+      marginBottom: 0,
     },
     a: {
       color: 'primary',
-      textUnderlineOffset: '0.25rem',
+      textUnderlineOffset: '0.1rem',
 
       ':hover': {
         textDecoration: 'none',

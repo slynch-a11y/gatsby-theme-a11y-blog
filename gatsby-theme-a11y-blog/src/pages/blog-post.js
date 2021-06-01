@@ -15,7 +15,7 @@ export default function BlogPost({data: {mdx}}) {
       <SEO title={mdx.frontmatter.title} />
       <Themed.h1>{mdx.frontmatter.title}</Themed.h1>
       {mdx.frontmatter.date ? (
-        <p class="date">{formatDate(mdx.frontmatter.date)}</p>
+        <p className="date">{formatDate(mdx.frontmatter.date)}</p>
       ) : null}
       {featuredImage ? (
         <GatsbyImage

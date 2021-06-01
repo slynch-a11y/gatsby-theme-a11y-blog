@@ -21,7 +21,7 @@ export default function BlogListing(props) {
                     {blog.node.frontmatter.title}
                   </Themed.a>
                 </Themed.h2>
-                <div class="date">{blog.node.frontmatter.date}</div>
+                <div className="date">{blog.node.frontmatter.date}</div>
                 <p sx={{marginBottom: '2rem'}}>{blog.node.excerpt}</p>
               </div>
             );

@@ -11,7 +11,7 @@ export default (SearchResults) => {
   return (
     <>
       {state.searchResults.length ? (
-        <div sx={{marginTop: '20px'}}>
+        <div id="search" sx={{marginTop: '20px'}}>
           <ul sx={{listStyleType: 'none'}}>
             {state.searchResults.map((page) => (
               <li key={page.id} sx={{marginLeft: '-28px', marginTop: '2rem'}}>

@@ -9,7 +9,7 @@ import {
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 /** @jsx jsx */
 import {jsx} from 'theme-ui';
-import {Styled, NavLink, Flex} from 'theme-ui';
+import {Themed, NavLink, Flex} from 'theme-ui';
 
 export function Footer(props) {
   const {
@@ -20,14 +20,14 @@ export function Footer(props) {
   } = props.data.site.siteMetadata.social;
 
   return (
-    <footer sx={{marginTop: '200px'}}>
+    <footer id="footer" sx={{marginTop: '200px'}}>
       <div
         sx={{
           mx: 'auto',
           textAlign: 'center',
         }}
       >
-        <Styled.h2 sx={{marginBottom: '2px'}}>Connect with me!</Styled.h2>
+        <Themed.h2 sx={{marginBottom: '2px'}}>Connect with me!</Themed.h2>
 
         <Flex
           as="nav"
@@ -93,7 +93,7 @@ export function Footer(props) {
         <div sx={{marginBottom: '30px'}}>
           © {new Date().getFullYear()} Built with
           {` `}
-          <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>
+          <Themed.a href="https://www.gatsbyjs.org">Gatsby</Themed.a>
         </div>
       </div>
     </footer>

@@ -44,7 +44,7 @@ export default function HomePage(props) {
                         {blog.node.frontmatter.title}
                       </Themed.a>
                     </Themed.h3>
-                    <p class="date">{blog.node.frontmatter.date}</p>
+                    <p className="date">{blog.node.frontmatter.date}</p>
                     <p sx={{marginBottom: '2rem'}}>{blog.node.excerpt}</p>
                   </div>
                 );
