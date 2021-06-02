@@ -9,7 +9,7 @@ import Logo from './logo';
 export default (Header) => {
   return (
     <header>
-      <div>
+      <div sx={{margin: 'auto', width: '18rem'}}>
         <Themed.a
           sx={{
             top: 'auto',

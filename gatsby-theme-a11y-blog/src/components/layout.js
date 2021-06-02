@@ -10,7 +10,14 @@ export default function Layout({children}) {
     <>
       <Container sx={{margin: 'auto', width: ['90%', '90%', '80%', '60%']}}>
         <Header />
-        <main id="main" tabIndex="-1" sx={{marginBottom: '50px'}}>
+        <main
+          id="main"
+          tabIndex="-1"
+          sx={{
+            marginBottom: '50px',
+            padding: '1rem',
+          }}
+        >
           <div sx={{marginTop: '50px'}}>
             <div sx={{marginBottom: '30px'}}></div>
 

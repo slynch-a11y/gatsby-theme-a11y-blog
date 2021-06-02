@@ -130,6 +130,7 @@ export default {
   links: {
     logo: {
       textDecoration: 'none !important',
+      padding: '1rem',
       color: 'primary',
       ':focus': {
         outlineWidth: '3px',

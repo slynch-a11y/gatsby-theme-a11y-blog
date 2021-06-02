@@ -16,7 +16,7 @@ export default (Toggle) => {
         variant="toggle"
         aria-label="Toggle Dark Mode"
         title="Toggle Dark Mode"
-        sx={{borderRadius: '50%', marginTop: '-7px'}}
+        sx={{borderRadius: '50%', marginTop: '-1.5rem'}}
         aria-pressed={ariaPressed}
         onClick={(e) => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default');
