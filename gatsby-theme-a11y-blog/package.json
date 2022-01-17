@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/slynch-a11y/gatsby-theme-a11y-blog"
   },
-  "version": "0.0.29",
+  "version": "0.0.30",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,8 @@
     "react-test-renderer": "^17.0.2"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@fontsource/poppins": "^4.5.0",
     "@fontsource/roboto": "^4.5.1",
     "@fontsource/sacramento": "^4.5.0",
@@ -50,6 +52,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^3.0.2",
     "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "@theme-ui/prism": "^0.13.1",
     "focus-visible": "^5.1.0",
     "gatsby-cli": "^4.5.2",
