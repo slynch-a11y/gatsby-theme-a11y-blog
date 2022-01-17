@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@slynch-a11y/gatsby-theme-a11y-blog": "*",
-        "gatsby": "^3.4.1",
+        "gatsby": "^4.5.3",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     }

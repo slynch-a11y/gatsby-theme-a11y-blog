@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/slynch-a11y/gatsby-theme-a11y-blog"
   },
-  "version": "0.0.28",
+  "version": "0.0.29",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
