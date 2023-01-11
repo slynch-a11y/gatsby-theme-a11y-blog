@@ -63,7 +63,7 @@
     "gatsby-plugin-theme-ui": "^0.13.1",
     "gatsby-remark-images": "^6.5.2",
     "gatsby-source-filesystem": "^4.5.2",
-    "gatsby-transformer-remark": "^5.5.2",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
